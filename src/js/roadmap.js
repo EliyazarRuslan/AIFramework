@@ -67,7 +67,7 @@ const monthName = (m) =>
   ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][m - 1] ||
   `M${m}`;
 
-const escape = (s = "") =>
+const esc = (s = "") =>
   String(s)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -76,35 +76,35 @@ const escape = (s = "") =>
 
 function cardHTML(issue) {
   const tag = issue.workshop ? "Workshop" : "Issue";
-  const why = (issue.why || []).map((w) => `<li>${escape(w)}</li>`).join("");
+  const why = (issue.why || []).map((w) => `<li>${esc(w)}</li>`).join("");
   return `
     <article class="roadmap-card${issue.workshop ? " is-workshop" : ""}" data-roadmap-card="${issue.issue}">
       <header class="roadmap-card-head">
         <div class="roadmap-card-meta">
-          <span class="roadmap-card-month">${escape(monthName(issue.month))} · Y${issue.year}</span>
+          <span class="roadmap-card-month">${esc(monthName(issue.month))} · Y${issue.year}</span>
           <span class="roadmap-card-kind">${tag}</span>
         </div>
-        <div class="roadmap-card-kicker">${escape(issue.kicker || "")}</div>
-        <h3 class="roadmap-card-title">${escape(issue.title || "")}</h3>
-        <p class="roadmap-card-subtitle">${escape(issue.subtitle || "")}</p>
+        <div class="roadmap-card-kicker">${esc(issue.kicker || "")}</div>
+        <h3 class="roadmap-card-title">${esc(issue.title || "")}</h3>
+        <p class="roadmap-card-subtitle">${esc(issue.subtitle || "")}</p>
       </header>
-      <p class="roadmap-card-benefit"><strong>Outcome:</strong> ${escape(issue.benefit || "")}</p>
+      <p class="roadmap-card-benefit"><strong>Outcome:</strong> ${esc(issue.benefit || "")}</p>
       <details class="roadmap-card-details">
         <summary>Show prompt &amp; challenge</summary>
         ${why ? `<div class="roadmap-card-block"><h4>What you'll learn</h4><ul>${why}</ul></div>` : ""}
         ${
           issue.prompt
-            ? `<div class="roadmap-card-block"><h4>Try this prompt</h4><pre class="roadmap-card-prompt">${escape(issue.prompt)}</pre></div>`
+            ? `<div class="roadmap-card-block"><h4>Try this prompt</h4><pre class="roadmap-card-prompt">${esc(issue.prompt)}</pre></div>`
             : ""
         }
         ${
           issue.challenge
-            ? `<div class="roadmap-card-block"><h4>This month's challenge</h4><p>${escape(issue.challenge)}</p></div>`
+            ? `<div class="roadmap-card-block"><h4>This month's challenge</h4><p>${esc(issue.challenge)}</p></div>`
             : ""
         }
         ${
           issue.card04Title
-            ? `<div class="roadmap-card-safety"><strong>${escape(issue.card04Title)}.</strong> ${escape(issue.card04Text || "")}</div>`
+            ? `<div class="roadmap-card-safety"><strong>${esc(issue.card04Title)}.</strong> ${esc(issue.card04Text || "")}</div>`
             : ""
         }
       </details>
@@ -119,25 +119,25 @@ function overviewHTML(year, issues) {
   const pillars = data.pillars
     .map(
       (p) =>
-        `<article class="roadmap-pillar"><h4>${escape(p.title)}</h4><p>${escape(p.body)}</p></article>`,
+        `<article class="roadmap-pillar"><h4>${esc(p.title)}</h4><p>${esc(p.body)}</p></article>`,
     )
     .join("");
-  const outcomes = data.outcomes.map((o) => `<li>${escape(o)}</li>`).join("");
+  const outcomes = data.outcomes.map((o) => `<li>${esc(o)}</li>`).join("");
   const chips = yearIssues
     .map(
       (i) =>
-        `<span class="roadmap-chip${i.workshop ? " is-workshop" : ""}" title="${escape(i.title || "")}">${escape(i.kicker || "")}</span>`,
+        `<span class="roadmap-chip${i.workshop ? " is-workshop" : ""}" title="${esc(i.title || "")}">${esc(i.kicker || "")}</span>`,
     )
     .join("");
   return `
     <div class="roadmap-overview">
       <div class="roadmap-overview-head">
-        <div class="roadmap-overview-kicker">Year ${escape(year)} · Strategic overview</div>
-        <p class="roadmap-overview-vision">${escape(data.vision)}</p>
+        <div class="roadmap-overview-kicker">Year ${esc(year)} · Strategic overview</div>
+        <p class="roadmap-overview-vision">${esc(data.vision)}</p>
       </div>
       <div class="roadmap-pillars">${pillars}</div>
       <div class="roadmap-overview-block">
-        <h4>Year ${escape(year)} outcomes</h4>
+        <h4>Year ${esc(year)} outcomes</h4>
         <ul class="roadmap-outcomes">${outcomes}</ul>
       </div>
       <div class="roadmap-overview-block">
