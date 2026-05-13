@@ -8,9 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DATA = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "issues.json"), "utf8"),
-);
+const DATA = JSON.parse(fs.readFileSync(path.join(__dirname, "issues.json"), "utf8"));
 const OUT_PATH =
   process.argv[2] ||
   path.join(
@@ -20,7 +18,10 @@ const OUT_PATH =
 
 const pad = (n) => String(n).padStart(2, "0");
 const esc = (s) =>
-  String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  String(s).replace(
+    /[&<>"]/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
+  );
 
 function orbitSvg() {
   return `<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -449,9 +450,15 @@ function buildHtml() {
     "Move from team workflows to automated, measured, governed AI. Custom assistants, document intelligence, impact metrics, and group-wide strategy.",
   );
 
-  const y1Issues = DATA.filter((i) => i.year === 1).map(issuePage).join("\n");
-  const y2Issues = DATA.filter((i) => i.year === 2).map(issuePage).join("\n");
-  const y3Issues = DATA.filter((i) => i.year === 3).map(issuePage).join("\n");
+  const y1Issues = DATA.filter((i) => i.year === 1)
+    .map(issuePage)
+    .join("\n");
+  const y2Issues = DATA.filter((i) => i.year === 2)
+    .map(issuePage)
+    .join("\n");
+  const y3Issues = DATA.filter((i) => i.year === 3)
+    .map(issuePage)
+    .join("\n");
 
   return `<!doctype html>
 <html lang="en">

@@ -1,6 +1,10 @@
 [
   {
-    "issue": 1, "year": 1, "month": 1, "kicker": "WELCOME · AI STARTER GUIDE", "workshop": false,
+    "issue": 1,
+    "year": 1,
+    "month": 1,
+    "kicker": "WELCOME · AI STARTER GUIDE",
+    "workshop": false,
     "title": "Your introduction to AI & ChatGPT",
     "subtitle": "Build a shared vocabulary — what AI is, what ChatGPT does, and which plan fits which work.",
     "benefit": "Start with the basics so every conversation builds on the same foundation.",
@@ -16,7 +20,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 2, "year": 1, "month": 2, "kicker": "CHATGPT BASICS", "workshop": false,
+    "issue": 2,
+    "year": 1,
+    "month": 2,
+    "kicker": "CHATGPT BASICS",
+    "workshop": false,
     "title": "Meet ChatGPT: your everyday work partner",
     "subtitle": "Learn how to ask better questions, refine answers, and turn rough notes into useful first drafts.",
     "benefit": "Draft, rewrite, summarise, explain, brainstorm, translate, and plan faster.",
@@ -32,7 +40,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 3, "year": 1, "month": 3, "kicker": "PROMPTING LAB", "workshop": true,
+    "issue": 3,
+    "year": 1,
+    "month": 3,
+    "kicker": "PROMPTING LAB",
+    "workshop": true,
     "title": "Prompt better, get better results",
     "subtitle": "Workshop month: practise hands-on prompting and learn how to guide ChatGPT with clear context and constraints.",
     "benefit": "Better prompts reduce rework and help AI produce more useful answers.",
@@ -48,7 +60,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 4, "year": 1, "month": 4, "kicker": "WRITING & COMMUNICATION", "workshop": false,
+    "issue": 4,
+    "year": 1,
+    "month": 4,
+    "kicker": "WRITING & COMMUNICATION",
+    "workshop": false,
     "title": "Write faster and communicate clearly",
     "subtitle": "Use AI to make messages clearer, more professional, and more audience-ready.",
     "benefit": "Reduce drafting time while improving clarity, tone, and structure.",
@@ -64,7 +80,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 5, "year": 1, "month": 5, "kicker": "RESEARCH & SUMMARIES", "workshop": false,
+    "issue": 5,
+    "year": 1,
+    "month": 5,
+    "kicker": "RESEARCH & SUMMARIES",
+    "workshop": false,
     "title": "From information overload to clarity",
     "subtitle": "Use AI to summarise documents, compare options, and prepare decision-ready notes.",
     "benefit": "Read faster, extract key points, and convert long material into useful action.",
@@ -80,7 +100,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 6, "year": 1, "month": 6, "kicker": "DATA & DECISIONS", "workshop": true,
+    "issue": 6,
+    "year": 1,
+    "month": 6,
+    "kicker": "DATA & DECISIONS",
+    "workshop": true,
     "title": "Make data easier to understand",
     "subtitle": "Workshop month: learn how AI can help explain trends, compare figures, and turn data into business commentary.",
     "benefit": "Move from raw numbers to clearer insights, faster.",
@@ -96,7 +120,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 7, "year": 1, "month": 7, "kicker": "DEPARTMENT USE CASES", "workshop": false,
+    "issue": 7,
+    "year": 1,
+    "month": 7,
+    "kicker": "DEPARTMENT USE CASES",
+    "workshop": false,
     "title": "AI for every team, not just IT",
     "subtitle": "Identify practical AI use cases across HR, Finance, Sales, Operations, Customer Service, IT, and leadership.",
     "benefit": "The biggest value appears when AI solves real department pain points.",
@@ -112,7 +140,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 8, "year": 1, "month": 8, "kicker": "WORKFLOW IMPROVEMENT", "workshop": false,
+    "issue": 8,
+    "year": 1,
+    "month": 8,
+    "kicker": "WORKFLOW IMPROVEMENT",
+    "workshop": false,
     "title": "Redesign the work, not just the tools",
     "subtitle": "Use AI to improve processes, SOPs, checklists, FAQs, and repeatable workflows.",
     "benefit": "Reduce manual effort and make work more consistent across teams.",
@@ -128,7 +160,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 9, "year": 1, "month": 9, "kicker": "AI CHAMPIONS", "workshop": true,
+    "issue": 9,
+    "year": 1,
+    "month": 9,
+    "kicker": "AI CHAMPIONS",
+    "workshop": true,
     "title": "Build, test, and share real use cases",
     "subtitle": "Workshop month: departments turn ideas into reusable prompt workflows and lightweight pilots.",
     "benefit": "Adoption grows faster when practical examples are shared by trusted colleagues.",
@@ -144,7 +180,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 10, "year": 1, "month": 10, "kicker": "RESPONSIBLE AI", "workshop": false,
+    "issue": 10,
+    "year": 1,
+    "month": 10,
+    "kicker": "RESPONSIBLE AI",
+    "workshop": false,
     "title": "Use AI safely and confidently",
     "subtitle": "Strengthen governance: privacy, accuracy, fairness, human review, and clear accountability.",
     "benefit": "Good governance helps people use AI with confidence instead of uncertainty.",
@@ -160,7 +200,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 11, "year": 1, "month": 11, "kicker": "INNOVATION WITH AI", "workshop": false,
+    "issue": 11,
+    "year": 1,
+    "month": 11,
+    "kicker": "INNOVATION WITH AI",
+    "workshop": false,
     "title": "From productivity to possibility",
     "subtitle": "Use AI to generate new ideas, test scenarios, and design better customer or employee experiences.",
     "benefit": "AI can help us improve existing work and imagine new ways to deliver value.",
@@ -176,7 +220,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 12, "year": 1, "month": 12, "kicker": "SHOWCASE & SCALE", "workshop": true,
+    "issue": 12,
+    "year": 1,
+    "month": 12,
+    "kicker": "SHOWCASE & SCALE",
+    "workshop": true,
     "title": "Celebrate progress and scale impact",
     "subtitle": "Workshop month: share success stories, measure impact, and choose the next AI priorities.",
     "benefit": "AI readiness becomes sustainable when value is measured and successful practices are scaled.",
@@ -192,7 +240,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 13, "year": 2, "month": 1, "kicker": "YEAR 2 KICKOFF", "workshop": false,
+    "issue": 13,
+    "year": 2,
+    "month": 1,
+    "kicker": "YEAR 2 KICKOFF",
+    "workshop": false,
     "title": "From skill to system",
     "subtitle": "Set Year 2 priorities and move from individual AI skills to team workflows.",
     "benefit": "Year 2 turns personal practice into shared department systems.",
@@ -208,7 +260,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 14, "year": 2, "month": 2, "kicker": "FINANCE & ANALYSIS", "workshop": false,
+    "issue": 14,
+    "year": 2,
+    "month": 2,
+    "kicker": "FINANCE & ANALYSIS",
+    "workshop": false,
     "title": "AI for finance and reporting",
     "subtitle": "Use AI to speed up variance commentary, draft reports, and explore \"what if\" scenarios.",
     "benefit": "AI helps finance teams move from data wrangling to insight and decision support.",
@@ -224,7 +280,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 15, "year": 2, "month": 3, "kicker": "HR & PEOPLE", "workshop": true,
+    "issue": 15,
+    "year": 2,
+    "month": 3,
+    "kicker": "HR & PEOPLE",
+    "workshop": true,
     "title": "AI for HR — from JDs to onboarding",
     "subtitle": "Workshop month: hands-on HR use cases — job descriptions, interview questions, policy Q&A, onboarding kits.",
     "benefit": "HR can move faster while keeping every touchpoint fair, clear, and human.",
@@ -240,7 +300,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 16, "year": 2, "month": 4, "kicker": "SALES ENABLEMENT", "workshop": false,
+    "issue": 16,
+    "year": 2,
+    "month": 4,
+    "kicker": "SALES ENABLEMENT",
+    "workshop": false,
     "title": "AI for sales — outreach to objections",
     "subtitle": "Help sales teams research accounts, personalise outreach, and rehearse difficult conversations.",
     "benefit": "AI helps salespeople spend more time talking to customers and less time staring at blank screens.",
@@ -256,7 +320,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 17, "year": 2, "month": 5, "kicker": "CUSTOMER SERVICE", "workshop": false,
+    "issue": 17,
+    "year": 2,
+    "month": 5,
+    "kicker": "CUSTOMER SERVICE",
+    "workshop": false,
     "title": "AI for service — clearer, faster, kinder",
     "subtitle": "Build response templates, sentiment triage, and escalation drafts for service teams.",
     "benefit": "Service teams respond faster while keeping every message warm and on-brand.",
@@ -272,7 +340,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 18, "year": 2, "month": 6, "kicker": "OPERATIONS & SOPs", "workshop": true,
+    "issue": 18,
+    "year": 2,
+    "month": 6,
+    "kicker": "OPERATIONS & SOPs",
+    "workshop": true,
     "title": "AI for operations — playbooks and incidents",
     "subtitle": "Workshop month: rebuild SOPs, incident reports, and supplier communications with AI support.",
     "benefit": "Operations becomes more consistent when knowledge stops living in people's heads.",
@@ -288,7 +360,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 19, "year": 2, "month": 7, "kicker": "PROCUREMENT & SUPPLY", "workshop": false,
+    "issue": 19,
+    "year": 2,
+    "month": 7,
+    "kicker": "PROCUREMENT & SUPPLY",
+    "workshop": false,
     "title": "AI for procurement and supply",
     "subtitle": "Use AI to compare quotes, summarise contracts, and prepare supplier conversations.",
     "benefit": "AI speeds up procurement analysis so teams can negotiate from a stronger position.",
@@ -304,7 +380,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 20, "year": 2, "month": 8, "kicker": "LEADERSHIP", "workshop": false,
+    "issue": 20,
+    "year": 2,
+    "month": 8,
+    "kicker": "LEADERSHIP",
+    "workshop": false,
     "title": "AI for leaders — decisions and memos",
     "subtitle": "Practical AI uses for managers and leaders: decision memos, board updates, town hall scripts.",
     "benefit": "Leaders get more thinking time when AI handles the heavy drafting work.",
@@ -320,7 +400,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 21, "year": 2, "month": 9, "kicker": "MARKETING & CONTENT", "workshop": true,
+    "issue": 21,
+    "year": 2,
+    "month": 9,
+    "kicker": "MARKETING & CONTENT",
+    "workshop": true,
     "title": "AI for marketing — briefs to campaigns",
     "subtitle": "Workshop month: campaign briefs, content variants, social posts, landing-page drafts.",
     "benefit": "Marketing teams can produce more variants and test ideas without burning out.",
@@ -336,7 +420,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 22, "year": 2, "month": 10, "kicker": "VOICE & MEETINGS", "workshop": false,
+    "issue": 22,
+    "year": 2,
+    "month": 10,
+    "kicker": "VOICE & MEETINGS",
+    "workshop": false,
     "title": "AI for meetings — transcribe, summarise, act",
     "subtitle": "Use AI tools to capture meetings, summarise outcomes, and assign next actions automatically.",
     "benefit": "Meetings become more useful when notes, decisions, and actions are captured by default.",
@@ -352,7 +440,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 23, "year": 2, "month": 11, "kicker": "AI + YOUR TOOLS", "workshop": false,
+    "issue": 23,
+    "year": 2,
+    "month": 11,
+    "kicker": "AI + YOUR TOOLS",
+    "workshop": false,
     "title": "Connect AI to the tools you already use",
     "subtitle": "Bring AI into email, Teams, SharePoint, and everyday productivity tools.",
     "benefit": "AI delivers value where work happens, not in a separate browser tab.",
@@ -368,7 +460,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 24, "year": 2, "month": 12, "kicker": "YEAR 2 SHOWCASE", "workshop": true,
+    "issue": 24,
+    "year": 2,
+    "month": 12,
+    "kicker": "YEAR 2 SHOWCASE",
+    "workshop": true,
     "title": "Department playbooks and the road ahead",
     "subtitle": "Workshop month: each department shares its AI playbook and Year 3 priorities.",
     "benefit": "Year 2 ends with shared playbooks that anyone in a role can adopt on day one.",
@@ -384,7 +480,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 25, "year": 3, "month": 1, "kicker": "YEAR 3 KICKOFF", "workshop": false,
+    "issue": 25,
+    "year": 3,
+    "month": 1,
+    "kicker": "YEAR 3 KICKOFF",
+    "workshop": false,
     "title": "From systems to scale",
     "subtitle": "Year 3 moves from team workflows to automated, governed, measurable AI at Goldbell.",
     "benefit": "AI shifts from \"extra effort\" to \"default way we work\" when it is automated and measured.",
@@ -400,7 +500,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 26, "year": 3, "month": 2, "kicker": "CUSTOM GPTs & COPILOTS", "workshop": false,
+    "issue": 26,
+    "year": 3,
+    "month": 2,
+    "kicker": "CUSTOM GPTs & COPILOTS",
+    "workshop": false,
     "title": "Build a custom AI assistant for your team",
     "subtitle": "Create low-code custom GPTs, Copilots, or assistants tuned to your team's tasks and knowledge.",
     "benefit": "Custom assistants are faster than prompts because the context is built in.",
@@ -416,7 +520,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 27, "year": 3, "month": 3, "kicker": "WORKFLOW AUTOMATION", "workshop": true,
+    "issue": 27,
+    "year": 3,
+    "month": 3,
+    "kicker": "WORKFLOW AUTOMATION",
+    "workshop": true,
     "title": "AI + automation — trigger to outcome",
     "subtitle": "Workshop month: build end-to-end flows with AI triggers (Power Automate, n8n, Make, Zapier).",
     "benefit": "AI plus automation moves work from your inbox to a system that just runs.",
@@ -432,7 +540,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 28, "year": 3, "month": 4, "kicker": "DOCUMENT INTELLIGENCE", "workshop": false,
+    "issue": 28,
+    "year": 3,
+    "month": 4,
+    "kicker": "DOCUMENT INTELLIGENCE",
+    "workshop": false,
     "title": "Extract structure from PDFs, Excel, and email",
     "subtitle": "Use AI to extract key data, fields, and tables from unstructured documents.",
     "benefit": "Tasks that used to take hours of copy-paste become a structured table in minutes.",
@@ -448,7 +560,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 29, "year": 3, "month": 5, "kicker": "CODE & QUERIES FOR NON-DEVS", "workshop": false,
+    "issue": 29,
+    "year": 3,
+    "month": 5,
+    "kicker": "CODE & QUERIES FOR NON-DEVS",
+    "workshop": false,
     "title": "AI for spreadsheets, SQL, and light code",
     "subtitle": "Use AI to write formulas, SQL queries, and small scripts even if you are not a developer.",
     "benefit": "Non-technical teams can self-serve data questions they used to wait days for.",
@@ -464,7 +580,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 30, "year": 3, "month": 6, "kicker": "MEASURING IMPACT", "workshop": true,
+    "issue": 30,
+    "year": 3,
+    "month": 6,
+    "kicker": "MEASURING IMPACT",
+    "workshop": true,
     "title": "Prove the value — time, quality, ROI",
     "subtitle": "Workshop month: define and track AI impact across time saved, quality, and outcomes.",
     "benefit": "Measured AI value earns more investment and trust from leadership.",
@@ -480,7 +600,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 31, "year": 3, "month": 7, "kicker": "RISK & GOVERNANCE", "workshop": false,
+    "issue": 31,
+    "year": 3,
+    "month": 7,
+    "kicker": "RISK & GOVERNANCE",
+    "workshop": false,
     "title": "Responsible AI at scale — risk and audit",
     "subtitle": "Strengthen AI governance: risk, audit, vendor due diligence, and incident handling.",
     "benefit": "A clear governance model lets people use AI fast without taking unsafe shortcuts.",
@@ -496,7 +620,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 32, "year": 3, "month": 8, "kicker": "AI CHAMPIONS PROGRAM", "workshop": false,
+    "issue": 32,
+    "year": 3,
+    "month": 8,
+    "kicker": "AI CHAMPIONS PROGRAM",
+    "workshop": false,
     "title": "Build the internal AI community",
     "subtitle": "Launch and sustain an AI champions program: people, rituals, recognition, knowledge base.",
     "benefit": "AI scales when people support each other, not just when IT delivers tools.",
@@ -512,7 +640,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 33, "year": 3, "month": 9, "kicker": "CUSTOMER-FACING AI", "workshop": true,
+    "issue": 33,
+    "year": 3,
+    "month": 9,
+    "kicker": "CUSTOMER-FACING AI",
+    "workshop": true,
     "title": "AI that customers actually see",
     "subtitle": "Workshop month: customer-facing AI — chatbots, smart search, AI in apps and the customer portal.",
     "benefit": "Done right, customer-facing AI improves service and brand. Done wrong, it damages both.",
@@ -528,7 +660,11 @@
     "card04Cta": "→ JOIN WORKSHOP"
   },
   {
-    "issue": 34, "year": 3, "month": 10, "kicker": "BUILD VS BUY", "workshop": false,
+    "issue": 34,
+    "year": 3,
+    "month": 10,
+    "kicker": "BUILD VS BUY",
+    "workshop": false,
     "title": "Build, buy, or partner — choosing the right path",
     "subtitle": "Decision frameworks for build-vs-buy across AI tools, platforms, and custom solutions.",
     "benefit": "Smart build-vs-buy decisions avoid wasted spend and tech debt.",
@@ -544,7 +680,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 35, "year": 3, "month": 11, "kicker": "STRATEGY & ROADMAP", "workshop": false,
+    "issue": 35,
+    "year": 3,
+    "month": 11,
+    "kicker": "STRATEGY & ROADMAP",
+    "workshop": false,
     "title": "From projects to portfolio — AI strategy",
     "subtitle": "Align the AI roadmap with business strategy, prioritise across the group, and plan investment.",
     "benefit": "AI strategy stops being a list of pilots and becomes part of the business plan.",
@@ -560,7 +700,11 @@
     "card04Cta": "→ REVIEW BEFORE USE"
   },
   {
-    "issue": 36, "year": 3, "month": 12, "kicker": "3-YEAR REVIEW", "workshop": true,
+    "issue": 36,
+    "year": 3,
+    "month": 12,
+    "kicker": "3-YEAR REVIEW",
+    "workshop": true,
     "title": "Three years on — impact and what's next",
     "subtitle": "Workshop month: review the three-year journey, celebrate impact, and shape what comes next.",
     "benefit": "A clear 3-year story builds permission and energy for the next chapter of AI at Goldbell.",

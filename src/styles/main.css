@@ -14,22 +14,22 @@ html {
 /* ── Design tokens — Goldbell AI (DESIGN.md: industrial-luxury) ── */
 :root {
   /* Surfaces */
-  --bg: #f5f0eb;            /* cream — page background */
-  --bg2: #ede4d8;           /* slightly darker cream for bands */
-  --surface: #ffffff;       /* card surface */
-  --surface2: #fcfaf7;      /* muted card / hover */
-  --surface3: #faf7f4;      /* pill / badge background */
-  --ink: #1c1c1e;           /* charcoal — primary text */
-  --ink2: #2a2a2c;          /* near-charcoal secondary heads */
-  --muted: #64748b;         /* slate-500 — captions / labels */
-  --border: #e8e0d8;        /* warm border */
-  --border2: #cdbfae;       /* stronger divider */
+  --bg: #f5f0eb; /* cream — page background */
+  --bg2: #ede4d8; /* slightly darker cream for bands */
+  --surface: #ffffff; /* card surface */
+  --surface2: #fcfaf7; /* muted card / hover */
+  --surface3: #faf7f4; /* pill / badge background */
+  --ink: #1c1c1e; /* charcoal — primary text */
+  --ink2: #2a2a2c; /* near-charcoal secondary heads */
+  --muted: #64748b; /* slate-500 — captions / labels */
+  --border: #e8e0d8; /* warm border */
+  --border2: #cdbfae; /* stronger divider */
 
   /* Gold accent system (DESIGN.md §2) */
-  --gold: #f5a623;          /* primary action / value */
-  --gold-hover: #d48e1a;    /* hover */
-  --gold-text: #8a5a00;     /* accessible gold text on light bg */
-  --gold-light: #faf7f4;    /* pill / badge bg */
+  --gold: #f5a623; /* primary action / value */
+  --gold-hover: #d48e1a; /* hover */
+  --gold-text: #8a5a00; /* accessible gold text on light bg */
+  --gold-light: #faf7f4; /* pill / badge bg */
   --gold-grad: linear-gradient(180deg, #f6b243 0%, #f5a623 100%);
   --gold-grad-hover: linear-gradient(180deg, #f7bc5b 0%, #f6b243 100%);
 
@@ -723,6 +723,7 @@ a:focus-visible {
 .btn:active {
   transform: scale(0.97) !important;
 }
+
 /* DESIGN.md §3: Primary CTA — gold gradient, charcoal text */
 .btn-primary {
   background: var(--gold-grad);
@@ -5605,6 +5606,7 @@ body {
     transform var(--transition),
     box-shadow var(--transition);
 }
+
 /* DESIGN.md §3: Primary CTA — gold gradient + charcoal text. */
 .btn-primary {
   background: var(--gold-grad);
@@ -5622,6 +5624,7 @@ body {
   background: var(--gold-hover);
   box-shadow: inset 0 2px 4px rgb(0, 0, 0, 0.15);
 }
+
 /* DESIGN.md §3: Command/secondary — warm outline + soft fill. */
 .btn-secondary {
   border: 1px solid var(--border);
@@ -5635,6 +5638,7 @@ body {
   color: var(--gold-hover);
   box-shadow: 0 1px 3px rgb(245, 166, 35, 0.15);
 }
+
 /* DESIGN.md §4 Caption tier — slate-500, tight tracking. Gold left-rule
    keeps marketing personality while complying with caption tokens. */
 .section-label {
@@ -7420,7 +7424,7 @@ main:focus-visible {
   font-size: 0.9375rem;
   line-height: 1.55;
   white-space: pre-wrap;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .pe-chat-msg[data-role="user"] {
   align-self: flex-end;
@@ -7618,7 +7622,9 @@ main:focus-visible {
   cursor: pointer;
   user-select: none;
   min-height: 44px;
-  transition: background var(--transition), border-color var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition);
 }
 .section-collapse > summary::-webkit-details-marker {
   display: none;
@@ -7708,7 +7714,9 @@ main:focus-visible {
   font-family: inherit;
   color: var(--ink);
   text-align: left;
-  transition: background var(--transition), border-color var(--transition),
+  transition:
+    background var(--transition),
+    border-color var(--transition),
     transform var(--transition);
 }
 .roadmap-tab:hover {
@@ -7750,7 +7758,9 @@ main:focus-visible {
   background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
-  transition: border-color var(--transition), transform var(--transition),
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
     box-shadow var(--transition);
 }
 .roadmap-card:hover {

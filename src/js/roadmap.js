@@ -5,7 +5,12 @@
 
 const PANEL_ID = "roadmap-panel";
 const TABS_ID = "roadmap-tabs";
-const DATA_URL = "/data/roadmap.json";
+// Resolve relative to document base so the site works on GitHub Pages project
+// subpaths (e.g. /AIFramework/) as well as root deployments.
+const DATA_URL =
+  (typeof document !== "undefined" && document.documentElement.getAttribute("data-base")
+    ? document.documentElement.getAttribute("data-base")
+    : "") + "data/roadmap.json";
 
 const OVERVIEWS = {
   2: {
