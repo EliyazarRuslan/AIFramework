@@ -18,6 +18,16 @@ test("hero navigation and starter steps respond", async ({ page }) => {
 test("prompt library filters and opens generated prompt cards", async ({ page }) => {
   await page.goto("/#prompt-master");
 
+  // Prompt Master body lives inside a <details class="section-collapse">
+  // and is collapsed by default. Force it open so the search input and
+  // prompt cards become interactive.
+  const promptMasterDetails = page.locator("#prompt-master details.section-collapse").first();
+  if (await promptMasterDetails.count()) {
+    await promptMasterDetails.evaluate((el: HTMLDetailsElement) => {
+      el.open = true;
+    });
+  }
+
   const search = page.getByRole("searchbox", { name: /Search prompts/i });
   await search.fill("email");
   await expect(page.locator("#pm-count")).not.toHaveText("0");
