@@ -84,7 +84,7 @@ async function main() {
 
   const url = `http://localhost:${PORT}/`;
   log();
-  heading("AI Spark");
+  heading("Goldbell AI");
   log(
     `${color.dim}Serving production build at${color.reset} ${color.cyan}${color.bold}${url}${color.reset}`,
   );

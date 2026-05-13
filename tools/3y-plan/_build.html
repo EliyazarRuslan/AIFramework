@@ -1,0 +1,3530 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Goldbell AI Readiness Newsletter — 3-Year Plan</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #f5f0eb;
+    --cream-2: #fbf5e8;
+    --ink: #1c1c1e;
+    --ink-2: #2a2a2c;
+    --muted: #6b7280;
+    --border: #e8e0d8;
+    --surface: #ffffff;
+    --gold: #f5a623;
+    --gold-dark: #d48e1a;
+    --gold-soft: #fdf3e1;
+  }
+  html, body { font-family: 'Inter', system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink); background: var(--cream); -webkit-print-color-adjust: exact;
+    print-color-adjust: exact; }
+  @page { size: A4; margin: 0; }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 12mm 12mm 12mm;
+    background: var(--cream);
+    page-break-after: always;
+    break-after: page;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* Brand mark */
+  .brand { display: flex; align-items: center; gap: 8px; }
+  .brand-mark {
+    width: 22px; height: 22px; border-radius: 4px; background: #c41e1e;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  }
+  .brand-word {
+    font-weight: 900; font-size: 9px; letter-spacing: 0.04em; line-height: 1.05;
+    color: var(--ink);
+  }
+  .brand-word span { font-size: 7px; letter-spacing: 0.06em; color: var(--ink-2); }
+
+  /* Issue top bar */
+  .topbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .tagline { color: var(--muted); font-size: 10px; }
+  .issue-badge {
+    background: #19191b;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    border-left: 3px solid var(--gold);
+    text-align: right;
+    min-width: 110px;
+  }
+  .issue-label { font-size: 7.5px; letter-spacing: 0.18em; color: var(--gold); font-weight: 700; }
+  .issue-month { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; }
+
+  .meta-strip {
+    text-align: center;
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-weight: 600;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    background: #19191b;
+    color: #fff;
+    border-radius: 14px;
+    padding: 22px 26px 26px;
+    overflow: hidden;
+    min-height: 140px;
+    background-image:
+      radial-gradient(circle at 88% 70%, rgba(245,166,35,0.08) 0%, transparent 40%),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 4px);
+  }
+  .hero-text { position: relative; z-index: 2; max-width: 64%; }
+  .kicker {
+    font-size: 8.5px; letter-spacing: 0.16em; font-weight: 700; color: var(--gold);
+    text-transform: uppercase; padding-bottom: 4px; margin-bottom: 12px;
+    border-bottom: 2px solid var(--gold); display: inline-block;
+  }
+  .hero-title {
+    font-size: 32px; line-height: 1.05; font-weight: 900;
+    letter-spacing: -0.02em; margin-bottom: 8px;
+  }
+  .hero-sub { font-size: 10.5px; line-height: 1.55; color: #d9d4cb; max-width: 95%; margin-bottom: 14px; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .chip {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(245,166,35,0.4);
+    border-radius: 4px;
+    padding: 5px 9px;
+    min-width: 64px;
+  }
+  .chip-num { color: var(--gold); font-weight: 800; font-size: 11px; letter-spacing: 0.04em; }
+  .chip-lbl { color: #cfc9bd; font-size: 7px; letter-spacing: 0.16em; font-weight: 700; }
+
+  .hero-orbit {
+    position: absolute; right: 18px; top: 50%; transform: translateY(-50%);
+    width: 130px; height: 130px; z-index: 1;
+  }
+  .hero-orbit svg { width: 100%; height: 100%; }
+
+  .hero-motto {
+    position: absolute; right: 22px; bottom: 14px;
+    font-size: 8px; letter-spacing: 0.18em; color: var(--gold); font-weight: 700; z-index: 2;
+  }
+
+  /* Benefit band */
+  .benefit {
+    background: var(--cream-2);
+    border-left: 4px solid var(--gold);
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 14px;
+  }
+  .benefit-label {
+    font-size: 7.5px; letter-spacing: 0.16em; color: var(--gold-dark);
+    font-weight: 700; margin-bottom: 4px;
+  }
+  .benefit-text { font-size: 12px; font-weight: 700; color: var(--ink); }
+
+  /* Cards */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    flex: 1;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .card::before {
+    content: ""; position: absolute; top: 0; left: 16px; right: 16px;
+    height: 2px; background: var(--gold); border-radius: 0 0 2px 2px;
+  }
+  .card-tag {
+    font-size: 7px; letter-spacing: 0.18em; color: var(--gold-dark); font-weight: 800;
+    text-transform: uppercase;
+  }
+  .card-title { font-size: 14px; font-weight: 800; color: var(--ink); margin-bottom: 2px; }
+  .why-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .why-list li {
+    display: grid; grid-template-columns: 18px 1fr; gap: 6px; align-items: flex-start;
+    font-size: 9.5px; line-height: 1.5; color: var(--ink-2);
+  }
+  .why-list .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 16px; height: 16px; border-radius: 999px;
+    border: 1.5px solid var(--gold); color: var(--gold-dark);
+    font-weight: 800; font-size: 8.5px;
+  }
+  .prompt {
+    position: relative;
+    background: var(--cream-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 14px 14px 22px;
+    font-size: 9.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    min-height: 78px;
+  }
+  .prompt .quote-mark {
+    position: absolute; top: 0; left: 6px;
+    font-size: 24px; line-height: 1; color: var(--gold); font-weight: 900;
+  }
+  .card-text { font-size: 9.5px; line-height: 1.55; color: var(--ink-2); }
+  .card-footer {
+    margin-top: auto; padding-top: 8px;
+    font-size: 7.5px; color: var(--muted);
+    border-top: 1px solid var(--border);
+    display: flex; gap: 6px; align-items: center;
+  }
+  .card-footer-label { color: var(--gold-dark); font-weight: 800; letter-spacing: 0.12em; }
+  .cta {
+    margin-top: auto;
+    display: inline-block;
+    width: max-content;
+    padding: 5px 10px;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--gold-dark);
+    background: var(--gold-soft);
+  }
+  .card.narrow { padding-bottom: 14px; }
+
+  /* Cover + year divider */
+  .cover, .year-divider {
+    position: relative;
+    padding: 22mm 16mm;
+    justify-content: flex-start;
+  }
+  .cover-band {
+    position: absolute; top: 0; left: 0; right: 0; height: 6mm;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.7;
+  }
+  .cover .brand, .year-divider .brand { margin-bottom: 22mm; }
+  .cover-eyebrow {
+    font-size: 9px; letter-spacing: 0.18em; font-weight: 700;
+    color: var(--gold-dark); margin-bottom: 12mm;
+  }
+  .cover-title {
+    font-size: 56px; line-height: 1.02; font-weight: 900;
+    letter-spacing: -0.025em; color: var(--ink); margin-bottom: 8mm;
+  }
+  .cover-subtitle {
+    font-size: 14px; line-height: 1.55; color: var(--ink-2); max-width: 150mm;
+    margin-bottom: 14mm;
+  }
+  .cover-orbit {
+    width: 70mm; height: 70mm; align-self: flex-end; margin-top: -6mm;
+  }
+  .cover-orbit.small { width: 46mm; height: 46mm; }
+  .cover-pills {
+    display: flex; gap: 10px; margin-top: 18mm;
+  }
+  .pill {
+    background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--gold);
+    border-radius: 4px; padding: 8px 14px; min-width: 90px;
+  }
+  .pill-num { color: var(--gold); font-weight: 800; font-size: 14px; }
+  .pill-lbl { color: var(--ink-2); font-size: 8px; letter-spacing: 0.16em; font-weight: 700; }
+  .cover-motto {
+    margin-top: 8mm; font-size: 10px; letter-spacing: 0.2em;
+    color: var(--gold-dark); font-weight: 700;
+  }
+  .cover-foot {
+    position: absolute; bottom: 14mm; left: 16mm; right: 16mm;
+    font-size: 9px; color: var(--muted); border-top: 1px solid var(--border);
+    padding-top: 6px;
+  }
+</style>
+</head>
+<body>
+<section class="page cover">
+    <div class="cover-band"></div>
+    <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+    <div class="cover-eyebrow">AI READINESS PROGRAM · GOLDBELL GROUP · FOR INTERNAL USE</div>
+    <h1 class="cover-title">AI Readiness<br/>Newsletter</h1>
+    <div class="cover-subtitle">A 3-year program for every Goldbell employee. 36 issues. Year 1 foundations,
+      Year 2 department depth, Year 3 automation, governance, and scale.</div>
+    <div class="cover-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+    <div class="cover-pills">
+      <div class="pill"><div class="pill-num">36</div><div class="pill-lbl">ISSUES</div></div>
+      <div class="pill"><div class="pill-num">3</div><div class="pill-lbl">YEAR PROGRAM</div></div>
+      <div class="pill"><div class="pill-num">12</div><div class="pill-lbl">LIVE WORKSHOPS</div></div>
+    </div>
+    <div class="cover-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    <div class="cover-foot">Mobilising Singapore's economy, now &amp; beyond.</div>
+  </section>
+<section class="page year-divider">
+    <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+    <div class="cover-eyebrow">YEAR 1 OF 3 · GOLDBELL AI READINESS</div>
+    <h1 class="cover-title">Year 1 — Foundations</h1>
+    <div class="cover-subtitle">Build shared AI literacy across Goldbell. Cover the basics, build prompt habits, identify use cases, and put first guardrails in place.</div>
+    <div class="cover-orbit small"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+    <div class="cover-pills">
+      <div class="pill"><div class="pill-num">12</div><div class="pill-lbl">ISSUES</div></div>
+      <div class="pill"><div class="pill-num">4</div><div class="pill-lbl">WORKSHOPS</div></div>
+      <div class="pill"><div class="pill-num">YEAR 1</div><div class="pill-lbl">PROGRAM</div></div>
+    </div>
+    <div class="cover-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 01 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 01 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">WELCOME · AI STARTER GUIDE</div>
+        <h1 class="hero-title">Your introduction to AI &amp; ChatGPT</h1>
+        <p class="hero-sub">Build a shared vocabulary — what AI is, what ChatGPT does, and which plan fits which work.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Start with the basics so every conversation builds on the same foundation.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Understand the difference between AI, generative AI, and ChatGPT.</span></li><li><span class="num">2</span><span>Know which ChatGPT plan fits which kind of work.</span></li><li><span class="num">3</span><span>Build a shared vocabulary before going hands-on.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Explain in 100 words what generative AI is, how it differs from traditional automation, and three examples I would see in my daily work. Keep it simple. Add 2 myths to avoid.
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Spend 10 minutes asking ChatGPT three questions about your role, and note what felt useful versus what felt wrong.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Never paste confidential, customer, or financial data into any AI tool until IT has approved it for company use.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 02 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 02 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">CHATGPT BASICS</div>
+        <h1 class="hero-title">Meet ChatGPT: your everyday work partner</h1>
+        <p class="hero-sub">Learn how to ask better questions, refine answers, and turn rough notes into useful first drafts.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Draft, rewrite, summarise, explain, brainstorm, translate, and plan faster.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Use a simple prompt formula: role, task, context, output, tone.</span></li><li><span class="num">2</span><span>Improve email, report, and meeting preparation quality.</span></li><li><span class="num">3</span><span>Turn blank-page work into a faster first draft.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a professional communications assistant. Rewrite the message below to be clearer, warmer, and concise. Keep the meaning unchanged. Message: [paste text].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Use ChatGPT to rewrite one internal message into a clearer version before sending it.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Review every AI output before sharing. You own the final message and judgement.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 03 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 03 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">PROMPTING LAB</div>
+        <h1 class="hero-title">Prompt better, get better results</h1>
+        <p class="hero-sub">Workshop month: practise hands-on prompting and learn how to guide ChatGPT with clear context and constraints.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Better prompts reduce rework and help AI produce more useful answers.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Learn the difference between vague and strong prompts.</span></li><li><span class="num">2</span><span>Practise prompt refinement and follow-up questions.</span></li><li><span class="num">3</span><span>Build your personal library of reusable prompts.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as an expert prompt coach. Improve this prompt for a business audience and explain what you changed and why: [paste prompt].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Create five reusable prompts for your role and share one with your team.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">Join the live workshop to practise prompt refinement with your team this month.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 04 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 04 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">WRITING &amp; COMMUNICATION</div>
+        <h1 class="hero-title">Write faster and communicate clearly</h1>
+        <p class="hero-sub">Use AI to make messages clearer, more professional, and more audience-ready.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Reduce drafting time while improving clarity, tone, and structure.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Create first drafts for emails, memos, agendas, and summaries.</span></li><li><span class="num">2</span><span>Adjust tone for customers, managers, or cross-functional teams.</span></li><li><span class="num">3</span><span>Turn bullet points into a polished update.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Turn these bullet points into a professional update for senior management. Keep it concise, action-oriented, and easy to scan: [paste bullets].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Take one rough note and ask ChatGPT to turn it into a polished email or short report.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Check facts, names, commitments, and dates manually before sending.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 05 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 05 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">RESEARCH &amp; SUMMARIES</div>
+        <h1 class="hero-title">From information overload to clarity</h1>
+        <p class="hero-sub">Use AI to summarise documents, compare options, and prepare decision-ready notes.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Read faster, extract key points, and convert long material into useful action.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Summarise policies, reports, meeting notes, or articles.</span></li><li><span class="num">2</span><span>Ask for pros, cons, risks, and open questions.</span></li><li><span class="num">3</span><span>Create comparison tables for better decisions.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Summarise this document for a busy manager. Include: 5 key points, 3 risks, 3 actions, and questions we should clarify. Text: [paste content].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Summarise one non-confidential document into a one-page brief.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Verify facts, sources, and dates. AI summaries can miss nuance or overstate certainty.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 06 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 06 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">DATA &amp; DECISIONS</div>
+        <h1 class="hero-title">Make data easier to understand</h1>
+        <p class="hero-sub">Workshop month: learn how AI can help explain trends, compare figures, and turn data into business commentary.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Move from raw numbers to clearer insights, faster.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Ask questions about spreadsheet trends and variances.</span></li><li><span class="num">2</span><span>Create first-draft commentary for reports.</span></li><li><span class="num">3</span><span>Spot outliers, missing data, and follow-up questions.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a business analyst. Review the data below and produce: key trends, possible reasons, risks, and recommended next actions. Data: [paste table].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Bring a sample non-confidential dataset or report and create a one-page insight summary.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">Bring a dataset to the workshop and turn it into a one-page commentary together.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 07 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 07 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">DEPARTMENT USE CASES</div>
+        <h1 class="hero-title">AI for every team, not just IT</h1>
+        <p class="hero-sub">Identify practical AI use cases across HR, Finance, Sales, Operations, Customer Service, IT, and leadership.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">The biggest value appears when AI solves real department pain points.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Map recurring tasks that involve drafting, reviewing, summarising, or analysing.</span></li><li><span class="num">2</span><span>Prioritise use cases by value, frequency, and risk.</span></li><li><span class="num">3</span><span>Create team-specific prompt packs.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as an AI use-case consultant. For this department, suggest 10 practical AI use cases ranked by value, effort, and risk. Department: [name].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Submit three use cases from your department using the use-case template.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Escalate high-risk use cases involving customers, HR, finance, legal, safety, or compliance.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 08 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 08 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">WORKFLOW IMPROVEMENT</div>
+        <h1 class="hero-title">Redesign the work, not just the tools</h1>
+        <p class="hero-sub">Use AI to improve processes, SOPs, checklists, FAQs, and repeatable workflows.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Reduce manual effort and make work more consistent across teams.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Turn informal know-how into standard checklists.</span></li><li><span class="num">2</span><span>Improve SOP clarity and handover quality.</span></li><li><span class="num">3</span><span>Find bottlenecks in repetitive processes.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Review this process and suggest how AI can support each step. Show the current step, AI support, human review point, and expected benefit. Process: [paste process].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Pick one workflow and map where AI can help draft, review, summarise, or analyse.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Keep humans responsible for approval points and final decisions.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 09 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 09 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">AI CHAMPIONS</div>
+        <h1 class="hero-title">Build, test, and share real use cases</h1>
+        <p class="hero-sub">Workshop month: departments turn ideas into reusable prompt workflows and lightweight pilots.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Adoption grows faster when practical examples are shared by trusted colleagues.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Select high-value, low-risk use cases.</span></li><li><span class="num">2</span><span>Build prompt flows and reusable templates.</span></li><li><span class="num">3</span><span>Create simple success measures such as time saved or quality improved.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Help me turn this AI use case into a repeatable prompt workflow. Include inputs, prompt steps, output format, human review, and success metric. Use case: [describe].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Create one department prompt workflow and test it with sample information.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">Champions cohort meets this month — share your pilot and learn from peers.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 10 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 10 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">RESPONSIBLE AI</div>
+        <h1 class="hero-title">Use AI safely and confidently</h1>
+        <p class="hero-sub">Strengthen governance: privacy, accuracy, fairness, human review, and clear accountability.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Good governance helps people use AI with confidence instead of uncertainty.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Know what data should never be entered into AI tools.</span></li><li><span class="num">2</span><span>Use a simple risk checklist before high-impact tasks.</span></li><li><span class="num">3</span><span>Build human review into every AI-assisted workflow.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a responsible AI reviewer. Assess this proposed AI use case for privacy, accuracy, bias, compliance, and human review risks. Use case: [describe].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Review one team use case with the responsible AI checklist.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">For sensitive or regulated topics, get the right review before using AI outputs.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 11 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 11 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">INNOVATION WITH AI</div>
+        <h1 class="hero-title">From productivity to possibility</h1>
+        <p class="hero-sub">Use AI to generate new ideas, test scenarios, and design better customer or employee experiences.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">AI can help us improve existing work and imagine new ways to deliver value.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Brainstorm service improvements and customer experience ideas.</span></li><li><span class="num">2</span><span>Run scenario planning and role-play objections.</span></li><li><span class="num">3</span><span>Prototype training, communication, or process improvements faster.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as an innovation facilitator. Generate 10 AI-enabled improvement ideas for this business challenge. For each, show benefit, effort, risk, and first experiment. Challenge: [describe].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Propose one AI-enabled improvement idea and define a small experiment.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Treat AI ideas as starting points. Validate feasibility, cost, customer impact, and risk.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 12 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 1 PROGRAM · ISSUE 12 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">SHOWCASE &amp; SCALE</div>
+        <h1 class="hero-title">Celebrate progress and scale impact</h1>
+        <p class="hero-sub">Workshop month: share success stories, measure impact, and choose the next AI priorities.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 1</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">AI readiness becomes sustainable when value is measured and successful practices are scaled.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Showcase department wins and lessons learned.</span></li><li><span class="num">2</span><span>Measure adoption, confidence, time saved, and quality gains.</span></li><li><span class="num">3</span><span>Agree the Year 2 roadmap for deeper AI adoption.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Help me write a concise AI success story using this structure: problem, AI support, human review, result, lesson learned, next step. Notes: [paste content].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Submit one AI success story or lesson learned from your team.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">Year-end showcase — present your AI win and shape the Year 2 roadmap.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page year-divider">
+    <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+    <div class="cover-eyebrow">YEAR 2 OF 3 · GOLDBELL AI READINESS</div>
+    <h1 class="cover-title">Year 2 — Department depth</h1>
+    <div class="cover-subtitle">Move from individual skills to team workflows. Each department builds its own AI playbook across HR, Finance, Sales, Service, Operations, Procurement, Leadership, and Marketing.</div>
+    <div class="cover-orbit small"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+    <div class="cover-pills">
+      <div class="pill"><div class="pill-num">12</div><div class="pill-lbl">ISSUES</div></div>
+      <div class="pill"><div class="pill-num">4</div><div class="pill-lbl">WORKSHOPS</div></div>
+      <div class="pill"><div class="pill-num">YEAR 2</div><div class="pill-lbl">PROGRAM</div></div>
+    </div>
+    <div class="cover-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 01 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 13 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">YEAR 2 KICKOFF</div>
+        <h1 class="hero-title">From skill to system</h1>
+        <p class="hero-sub">Set Year 2 priorities and move from individual AI skills to team workflows.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Year 2 turns personal practice into shared department systems.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Review Year 1 wins and gaps per team.</span></li><li><span class="num">2</span><span>Set 2–3 measurable AI goals per department.</span></li><li><span class="num">3</span><span>Identify the one workflow each team will rebuild around AI.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as our AI program lead. Help me draft 3 Year-2 AI goals for [department] that are specific, measurable, and tied to a business outcome. Constraints: [resources, timeline].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Submit your department's three Year 2 AI goals using the goal template.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Goals should improve work, not pressure colleagues into unsafe AI use. Keep human review in every workflow.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 02 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 14 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">FINANCE &amp; ANALYSIS</div>
+        <h1 class="hero-title">AI for finance and reporting</h1>
+        <p class="hero-sub">Use AI to speed up variance commentary, draft reports, and explore &quot;what if&quot; scenarios.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">AI helps finance teams move from data wrangling to insight and decision support.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Draft variance and management commentary from raw numbers.</span></li><li><span class="num">2</span><span>Build &quot;what if&quot; scenarios for budgets and forecasts.</span></li><li><span class="num">3</span><span>Generate clear narratives for non-finance leaders.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a finance business partner. Read the numbers below and write a one-page management commentary covering trends, drivers, risks, and recommended actions. Data: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Take one routine finance report and AI-draft the commentary, then refine it.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Never paste customer, vendor, or restricted financial data into a non-approved AI tool. Use anonymised or aggregated inputs.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 03 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 15 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">HR &amp; PEOPLE</div>
+        <h1 class="hero-title">AI for HR — from JDs to onboarding</h1>
+        <p class="hero-sub">Workshop month: hands-on HR use cases — job descriptions, interview questions, policy Q&amp;A, onboarding kits.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">HR can move faster while keeping every touchpoint fair, clear, and human.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Draft inclusive, accurate job descriptions in minutes.</span></li><li><span class="num">2</span><span>Generate competency-based interview questions and scoring guides.</span></li><li><span class="num">3</span><span>Build onboarding plans and policy explainers employees actually read.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a Goldbell HR partner. Draft a job description for [role] including purpose, key outcomes, must-have skills, nice-to-haves, and an inclusive language check. Context: [details].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Rebuild one job description or onboarding doc with AI and ask a peer for honest feedback.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">HR cohort workshop — bring a real (anonymised) HR task and rebuild it with AI.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 04 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 16 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">SALES ENABLEMENT</div>
+        <h1 class="hero-title">AI for sales — outreach to objections</h1>
+        <p class="hero-sub">Help sales teams research accounts, personalise outreach, and rehearse difficult conversations.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">AI helps salespeople spend more time talking to customers and less time staring at blank screens.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Research accounts and contacts faster from public information.</span></li><li><span class="num">2</span><span>Personalise outreach without sounding generic.</span></li><li><span class="num">3</span><span>Rehearse pricing, scope, and objection conversations before they happen.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as my sales coach. Given this account profile, draft a personalised outreach email and three follow-up touchpoints. Then list five objections likely to come up and how I should respond. Account: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Pick one stalled opportunity. Have AI generate a refreshed approach and try it this week.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Outputs are drafts, not commitments. Always check price, scope, and policy details before sending.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 05 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 17 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">CUSTOMER SERVICE</div>
+        <h1 class="hero-title">AI for service — clearer, faster, kinder</h1>
+        <p class="hero-sub">Build response templates, sentiment triage, and escalation drafts for service teams.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Service teams respond faster while keeping every message warm and on-brand.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Draft macros and reply templates for common issues.</span></li><li><span class="num">2</span><span>Detect tone and prioritise upset or urgent customers.</span></li><li><span class="num">3</span><span>Draft escalation summaries with context, options, and recommendations.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a senior customer-service lead. Read this customer message and draft a reply that acknowledges, explains, offers a next step, and ends warmly. Then assess sentiment and urgency. Message: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Take one tough customer message this week and use AI to draft the first response — then a human edits.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Never share account details, IDs, or personal information with AI. Use placeholders and edit in the final reply.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 06 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 18 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">OPERATIONS &amp; SOPs</div>
+        <h1 class="hero-title">AI for operations — playbooks and incidents</h1>
+        <p class="hero-sub">Workshop month: rebuild SOPs, incident reports, and supplier communications with AI support.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Operations becomes more consistent when knowledge stops living in people's heads.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Convert tribal knowledge into clear SOPs and checklists.</span></li><li><span class="num">2</span><span>Draft incident reports and root-cause notes quickly.</span></li><li><span class="num">3</span><span>Generate supplier and partner communications consistently.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as an ops continuous-improvement lead. Given these notes from a recent incident, draft an incident report with: summary, timeline, root cause hypothesis, immediate fix, and prevention actions. Notes: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Pick one informal process. Rebuild it as a clear AI-assisted SOP and circulate for feedback.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">Operations cohort — bring one SOP or incident note to rebuild together.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 07 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 19 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">PROCUREMENT &amp; SUPPLY</div>
+        <h1 class="hero-title">AI for procurement and supply</h1>
+        <p class="hero-sub">Use AI to compare quotes, summarise contracts, and prepare supplier conversations.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">AI speeds up procurement analysis so teams can negotiate from a stronger position.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Compare quotes and vendor proposals side by side.</span></li><li><span class="num">2</span><span>Summarise long contracts and flag unusual clauses.</span></li><li><span class="num">3</span><span>Prepare structured supplier review and negotiation notes.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a senior procurement analyst. Compare these three vendor proposals side by side on price, scope, terms, risks, and recommended next questions. Proposals: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Use AI to summarise one supplier contract and prepare three questions for your next review.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Contract terms must be confirmed by Legal or Finance. AI summaries are a starting point, not the source of truth.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 08 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 20 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">LEADERSHIP</div>
+        <h1 class="hero-title">AI for leaders — decisions and memos</h1>
+        <p class="hero-sub">Practical AI uses for managers and leaders: decision memos, board updates, town hall scripts.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Leaders get more thinking time when AI handles the heavy drafting work.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Draft decision memos with options, trade-offs, and recommendations.</span></li><li><span class="num">2</span><span>Generate board and exco updates from raw notes.</span></li><li><span class="num">3</span><span>Prepare town hall and team communications in different tones.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as my chief of staff. Turn these meeting notes into a one-page decision memo with context, options, trade-offs, recommendation, and risks. Notes: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Take one upcoming decision and draft the memo with AI. Bring it to your next 1:1 for review.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Strategic and people-sensitive content should never go through public AI tools. Use approved internal tools only.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 09 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 21 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">MARKETING &amp; CONTENT</div>
+        <h1 class="hero-title">AI for marketing — briefs to campaigns</h1>
+        <p class="hero-sub">Workshop month: campaign briefs, content variants, social posts, landing-page drafts.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Marketing teams can produce more variants and test ideas without burning out.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Generate campaign briefs and creative concepts faster.</span></li><li><span class="num">2</span><span>Produce on-brand content variants for different channels.</span></li><li><span class="num">3</span><span>Test landing-page and email copy options before launch.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as our brand-trained marketing strategist. Draft a campaign brief for [product] that includes objective, audience, key message, three creative concepts, channels, and measurement. Context: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Pick one campaign and AI-generate three concept directions. Choose one to develop with your team.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">Marketing cohort — bring a real brief and run it through AI for fresh angles.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 10 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 22 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">VOICE &amp; MEETINGS</div>
+        <h1 class="hero-title">AI for meetings — transcribe, summarise, act</h1>
+        <p class="hero-sub">Use AI tools to capture meetings, summarise outcomes, and assign next actions automatically.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Meetings become more useful when notes, decisions, and actions are captured by default.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Transcribe meetings accurately and securely.</span></li><li><span class="num">2</span><span>Auto-summarise decisions, actions, owners, and dates.</span></li><li><span class="num">3</span><span>Convert long calls into one-page briefings.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as my executive assistant. From this meeting transcript, produce a one-page summary with: context, decisions, action items with owners and dates, open questions, and follow-up suggestions. Transcript: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Use AI to summarise one internal meeting this week and share the action list with attendees.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Only record meetings when participants are informed and consent. Avoid external or client meetings unless permitted by policy.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 11 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 23 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">AI + YOUR TOOLS</div>
+        <h1 class="hero-title">Connect AI to the tools you already use</h1>
+        <p class="hero-sub">Bring AI into email, Teams, SharePoint, and everyday productivity tools.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">AI delivers value where work happens, not in a separate browser tab.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Use Copilot or equivalent AI features inside Outlook, Word, Excel, Teams.</span></li><li><span class="num">2</span><span>Connect AI to internal knowledge stores safely.</span></li><li><span class="num">3</span><span>Replace some manual lookups with AI-assisted search.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a Microsoft 365 productivity coach. For [my role], suggest 10 ways to use Copilot inside Outlook, Word, Excel, Teams, and PowerPoint, ranked by impact and ease. Constraints: [policy notes].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Pick one tool you already use and try one AI feature inside it this week.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">In integrated AI tools, your data may be processed by the vendor. Confirm what is and isn't permitted under Goldbell IT policy.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 12 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 2 PROGRAM · ISSUE 24 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">YEAR 2 SHOWCASE</div>
+        <h1 class="hero-title">Department playbooks and the road ahead</h1>
+        <p class="hero-sub">Workshop month: each department shares its AI playbook and Year 3 priorities.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 2</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Year 2 ends with shared playbooks that anyone in a role can adopt on day one.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Document each team's standard AI workflows.</span></li><li><span class="num">2</span><span>Compare adoption, time saved, and quality gains across teams.</span></li><li><span class="num">3</span><span>Choose where to scale, automate, or pause.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Help me draft my department's AI playbook. Include: roles, top 5 workflows, prompts used, success measures, risks, and what we still need help with. Notes: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Submit your department's Year 2 AI playbook draft for the showcase.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">Year 2 showcase — present your playbook and vote on Year 3 priorities.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page year-divider">
+    <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+    <div class="cover-eyebrow">YEAR 3 OF 3 · GOLDBELL AI READINESS</div>
+    <h1 class="cover-title">Year 3 — Automation, governance, scale</h1>
+    <div class="cover-subtitle">Move from team workflows to automated, measured, governed AI. Custom assistants, document intelligence, impact metrics, and group-wide strategy.</div>
+    <div class="cover-orbit small"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+    <div class="cover-pills">
+      <div class="pill"><div class="pill-num">12</div><div class="pill-lbl">ISSUES</div></div>
+      <div class="pill"><div class="pill-num">4</div><div class="pill-lbl">WORKSHOPS</div></div>
+      <div class="pill"><div class="pill-num">YEAR 3</div><div class="pill-lbl">PROGRAM</div></div>
+    </div>
+    <div class="cover-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 01 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 25 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">YEAR 3 KICKOFF</div>
+        <h1 class="hero-title">From systems to scale</h1>
+        <p class="hero-sub">Year 3 moves from team workflows to automated, governed, measurable AI at Goldbell.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">AI shifts from &quot;extra effort&quot; to &quot;default way we work&quot; when it is automated and measured.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Identify workflows ready for automation and agents.</span></li><li><span class="num">2</span><span>Set group-level metrics for AI value and risk.</span></li><li><span class="num">3</span><span>Plan the move from copy-paste prompts to integrated tools.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as our AI strategy lead. Given Year 1–2 wins and gaps, draft three Year-3 priorities for Goldbell with rationale, owner, target outcome, and a 90-day kickoff plan. Inputs: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Submit your department's top automation candidate workflow.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Automation amplifies mistakes. Every automated workflow needs an owner, a human review point, and a fallback.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 02 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 26 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">CUSTOM GPTs &amp; COPILOTS</div>
+        <h1 class="hero-title">Build a custom AI assistant for your team</h1>
+        <p class="hero-sub">Create low-code custom GPTs, Copilots, or assistants tuned to your team's tasks and knowledge.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Custom assistants are faster than prompts because the context is built in.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Identify a high-frequency, well-defined task to wrap into a custom assistant.</span></li><li><span class="num">2</span><span>Pre-load context, examples, and guardrails.</span></li><li><span class="num">3</span><span>Roll out, gather feedback, and improve weekly.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a custom GPT designer. For this task, propose the assistant's role, system prompt, sample inputs, guardrails, allowed and forbidden behaviours, and three test scenarios. Task: [describe].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Spec one custom assistant for your team and build a first version this month.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Custom assistants must follow Goldbell data-handling rules. Get IT and Legal review before any production rollout.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 03 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 27 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">WORKFLOW AUTOMATION</div>
+        <h1 class="hero-title">AI + automation — trigger to outcome</h1>
+        <p class="hero-sub">Workshop month: build end-to-end flows with AI triggers (Power Automate, n8n, Make, Zapier).</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">AI plus automation moves work from your inbox to a system that just runs.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Map a real workflow with manual and AI steps.</span></li><li><span class="num">2</span><span>Add triggers, AI generation, human review, and notifications.</span></li><li><span class="num">3</span><span>Measure before/after time, error rate, and exception cases.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as an automation architect. Design an end-to-end flow for [workflow]: triggers, AI steps, human review, success paths, error paths, and metrics. Constraints: [tools available].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Pick one workflow and prototype it with AI + your team's automation tool.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">Automation lab — build one working flow during the workshop with mentor support.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 04 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 28 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">DOCUMENT INTELLIGENCE</div>
+        <h1 class="hero-title">Extract structure from PDFs, Excel, and email</h1>
+        <p class="hero-sub">Use AI to extract key data, fields, and tables from unstructured documents.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Tasks that used to take hours of copy-paste become a structured table in minutes.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Extract fields and tables from invoices, contracts, claims, or forms.</span></li><li><span class="num">2</span><span>Route extracted data into spreadsheets or systems automatically.</span></li><li><span class="num">3</span><span>Catch missing or inconsistent values before they cause issues downstream.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a document intelligence specialist. Extract the following fields from this document into a clean table: [list fields]. Flag any missing, ambiguous, or unusual values. Document: [paste or attach].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Pick one document type your team handles repeatedly. Use AI to extract its fields and review accuracy.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Confidential or regulated documents need approved tooling and storage. Confirm with IT before processing at scale.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 05 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 29 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">CODE &amp; QUERIES FOR NON-DEVS</div>
+        <h1 class="hero-title">AI for spreadsheets, SQL, and light code</h1>
+        <p class="hero-sub">Use AI to write formulas, SQL queries, and small scripts even if you are not a developer.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Non-technical teams can self-serve data questions they used to wait days for.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Get help writing Excel and Google Sheets formulas.</span></li><li><span class="num">2</span><span>Generate safe, read-only SQL queries with explanations.</span></li><li><span class="num">3</span><span>Build small scripts to clean files or automate repetitive tasks.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a friendly data engineer. Write a SQL query to answer this question against this schema, explain what each part does, and warn me about anything that could go wrong. Question and schema: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Pick one repetitive data task and have AI help you script or formula your way out of it.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Always run AI-generated SQL as read-only first. Never run code or queries on production data without review.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 06 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 30 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">MEASURING IMPACT</div>
+        <h1 class="hero-title">Prove the value — time, quality, ROI</h1>
+        <p class="hero-sub">Workshop month: define and track AI impact across time saved, quality, and outcomes.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Measured AI value earns more investment and trust from leadership.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Define meaningful AI impact metrics per workflow.</span></li><li><span class="num">2</span><span>Capture before-and-after data simply and honestly.</span></li><li><span class="num">3</span><span>Tell the story of AI value to leaders and peers.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a measurement coach. For this AI workflow, propose 3 impact metrics, how to baseline, how to track, and how to present the result on one page. Workflow: [describe].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Submit a one-page impact story for one AI workflow your team uses.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">Impact lab — bring a workflow and build its measurement plan together.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 07 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 31 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">RISK &amp; GOVERNANCE</div>
+        <h1 class="hero-title">Responsible AI at scale — risk and audit</h1>
+        <p class="hero-sub">Strengthen AI governance: risk, audit, vendor due diligence, and incident handling.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">A clear governance model lets people use AI fast without taking unsafe shortcuts.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Maintain an AI use-case register with risk levels.</span></li><li><span class="num">2</span><span>Run vendor and tool due diligence consistently.</span></li><li><span class="num">3</span><span>Define how to handle AI errors, near misses, and incidents.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as our AI risk officer. Assess this AI use case for data, accuracy, compliance, vendor, and human-oversight risks. Recommend mitigations and a review cadence. Use case: [describe].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Add one of your team's AI workflows to the AI use-case register, with risks and mitigations.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">For MAS, PDPA, and customer-facing AI, never skip review. When in doubt, escalate before deploying.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 08 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 32 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">AI CHAMPIONS PROGRAM</div>
+        <h1 class="hero-title">Build the internal AI community</h1>
+        <p class="hero-sub">Launch and sustain an AI champions program: people, rituals, recognition, knowledge base.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">AI scales when people support each other, not just when IT delivers tools.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Identify AI champions in every team.</span></li><li><span class="num">2</span><span>Run monthly clinics, demos, and prompt swaps.</span></li><li><span class="num">3</span><span>Recognise and reward responsible AI wins.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as our AI program designer. Draft the operating model for our AI champions program: roles, rituals, communication, training, recognition, and success measures.
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Nominate or volunteer one AI champion from your team and join the next monthly clinic.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Champions support adoption, not replace governance. Risk decisions still go through the right channels.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 09 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 33 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">CUSTOMER-FACING AI</div>
+        <h1 class="hero-title">AI that customers actually see</h1>
+        <p class="hero-sub">Workshop month: customer-facing AI — chatbots, smart search, AI in apps and the customer portal.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Done right, customer-facing AI improves service and brand. Done wrong, it damages both.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Pick the right customer journeys for AI to assist.</span></li><li><span class="num">2</span><span>Design tone, fallback, and escalation to a human.</span></li><li><span class="num">3</span><span>Measure satisfaction, deflection, and incident rates.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as a customer-experience designer. Map this customer journey, suggest where AI assists and where humans must own the moment, and define metrics and risks. Journey: [describe].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Pick one customer touchpoint and design a small AI assist with clear human fallback.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">Customer-facing AI lab — design and pressure-test one use case with peer review.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 10 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 34 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">BUILD VS BUY</div>
+        <h1 class="hero-title">Build, buy, or partner — choosing the right path</h1>
+        <p class="hero-sub">Decision frameworks for build-vs-buy across AI tools, platforms, and custom solutions.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">Smart build-vs-buy decisions avoid wasted spend and tech debt.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Score AI options on fit, cost, risk, and time-to-value.</span></li><li><span class="num">2</span><span>Avoid duplicating what existing platforms already provide.</span></li><li><span class="num">3</span><span>Decide when custom work is worth the long-term cost.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as our build-vs-buy advisor. For this AI need, compare three approaches (off-the-shelf, configure existing platform, custom build) on fit, cost, risk, time-to-value, and lock-in. Need: [describe].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Pick one AI need your team has and run it through the build-vs-buy framework with leadership.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Vendor choices have long tails — data, exit, and dependency risks. Loop in IT, Legal, and Finance early.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 11 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 35 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">STRATEGY &amp; ROADMAP</div>
+        <h1 class="hero-title">From projects to portfolio — AI strategy</h1>
+        <p class="hero-sub">Align the AI roadmap with business strategy, prioritise across the group, and plan investment.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">AI strategy stops being a list of pilots and becomes part of the business plan.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Map AI initiatives to business goals across Goldbell.</span></li><li><span class="num">2</span><span>Prioritise across value, feasibility, and risk.</span></li><li><span class="num">3</span><span>Allocate budget, talent, and capacity intentionally.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Act as our AI strategy advisor. Given these business goals and current AI initiatives, propose a 12-month AI portfolio plan with priorities, sequencing, owners, and success metrics. Inputs: [paste].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Submit a one-page department AI roadmap that ties to Goldbell business goals.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-safety">
+        <div class="card-tag">04 · SAFETY REMINDER</div>
+        <h3 class="card-title">Safety reminder</h3>
+        <p class="card-text">Strategic plans live in approved tools only. Keep sensitive priorities out of public AI services.</p>
+        <div class="cta">→ REVIEW BEFORE USE</div>
+      </div>
+    </div>
+  </section>
+<section class="page issue">
+    <header class="topbar">
+      <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-word">GOLDBELL<br/><span>GROUP</span></div>
+  </div>
+      <div class="tagline">Mobilising Singapore's economy, now &amp; beyond.</div>
+      <div class="issue-badge">
+        <div class="issue-label">ISSUE</div>
+        <div class="issue-month">MONTH 12 / 12</div>
+      </div>
+    </header>
+    <div class="meta-strip">AI READINESS MONTHLY · GOLDBELL GROUP · YEAR 3 PROGRAM · ISSUE 36 OF 36 · FOR INTERNAL USE</div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <div class="kicker">3-YEAR REVIEW</div>
+        <h1 class="hero-title">Three years on — impact and what's next</h1>
+        <p class="hero-sub">Workshop month: review the three-year journey, celebrate impact, and shape what comes next.</p>
+        <div class="chips">
+          <div class="chip"><div class="chip-num">12</div><div class="chip-lbl">ISSUES</div></div>
+          <div class="chip"><div class="chip-num">YEAR 3</div><div class="chip-lbl">PROGRAM</div></div>
+          <div class="chip"><div class="chip-num">LIVE</div><div class="chip-lbl">WORKSHOPS</div></div>
+        </div>
+      </div>
+      <div class="hero-orbit"><svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.95">
+      <ellipse cx="120" cy="120" rx="106" ry="38" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(-22 120 120)" />
+      <ellipse cx="120" cy="120" rx="96" ry="60" transform="rotate(22 120 120)" />
+    </g>
+    <g fill="#f5a623">
+      <circle cx="226" cy="120" r="4" />
+      <circle cx="38" cy="138" r="3.5" />
+      <circle cx="178" cy="64" r="3" />
+    </g>
+    <circle cx="120" cy="120" r="44" fill="#f5a623" />
+    <text x="120" y="134" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif"
+          font-size="36" font-weight="900" fill="#1c1c1e">AI</text>
+  </svg></div>
+      <div class="hero-motto">PRACTICAL · RESPONSIBLE · REPEATABLE</div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-label">THIS MONTH'S BENEFIT</div>
+      <div class="benefit-text">A clear 3-year story builds permission and energy for the next chapter of AI at Goldbell.</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-tag">01 · WHY IT MATTERS</div>
+        <h3 class="card-title">Why it matters</h3>
+        <ol class="why-list"><li><span class="num">1</span><span>Showcase department impact across the 3-year program.</span></li><li><span class="num">2</span><span>Recognise champions, teams, and standout use cases.</span></li><li><span class="num">3</span><span>Decide where AI investment goes next, with confidence.</span></li></ol>
+        <div class="card-footer">
+          <span class="card-footer-label">OUTCOMES</span>
+          <span>Confidence · Better drafts · Faster decisions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">02 · TRY THIS PROMPT</div>
+        <h3 class="card-title">Try this prompt</h3>
+        <blockquote class="prompt">
+          <span class="quote-mark">&ldquo;</span>
+          Help me write a 3-year AI impact story for Goldbell: what we started with, what changed, the wins, the lessons, the people, and where we are heading next. Inputs: [paste highlights].
+        </blockquote>
+        <div class="card-footer">
+          <span class="card-footer-label">TIP</span>
+          <span>Replace the bracketed prompt details with your own context.</span>
+        </div>
+      </div>
+
+      <div class="card narrow">
+        <div class="card-tag">03 · 10-MINUTE CHALLENGE</div>
+        <h3 class="card-title">10-minute challenge</h3>
+        <p class="card-text">Bring your team's 3-year highlight reel or one-pager to the showcase.</p>
+        <div class="cta">→ TRY THIS WEEK</div>
+      </div>
+
+      <div class="card narrow card-hands-on">
+        <div class="card-tag">04 · HANDS-ON SESSION</div>
+        <h3 class="card-title">Hands-on session</h3>
+        <p class="card-text">3-year review &amp; awards — present, vote, and shape the next program.</p>
+        <div class="cta">→ JOIN WORKSHOP</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

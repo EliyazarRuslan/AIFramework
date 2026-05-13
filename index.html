@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Spark — Monthly Employee AI Newsletter</title>
+    <title>Goldbell AI — Monthly Employee AI Newsletter</title>
     <meta
       name="description"
       content="Your friendly monthly AI newsletter. Learn AI, find ready-made prompts, and work smarter."
     />
 
     <!-- ── PWA + theme metadata ── -->
-    <meta name="theme-color" content="#171513" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#faf8f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f0eb" media="(prefers-color-scheme: light)" />
     <meta name="color-scheme" content="light dark" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="AI Spark" />
+    <meta name="apple-mobile-web-app-title" content="Goldbell AI" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" type="image/svg+xml" href="/icons/icon-192.svg" />
@@ -42,6 +42,7 @@
 
     <!-- ── Site extras: PWA + Web Vitals + reduced-motion guard. Deferred. ── -->
     <script type="module" src="/src/js/site-extras.js"></script>
+    <script type="module" src="/src/js/roadmap.js"></script>
   </head>
   <body>
     <!-- ── Skip to content (a11y) ── -->
@@ -58,7 +59,7 @@
       <div class="welcome-strip-inner">
         <span class="welcome-strip-msg">
           <span aria-hidden="true">👋</span>
-          <span><strong>New here?</strong> Take the 60-second tour of AI Spark.</span>
+          <span><strong>New here?</strong> Take the 60-second tour of Goldbell AI.</span>
         </span>
         <button
           type="button"
@@ -80,7 +81,7 @@
         </button>
       </div>
     </aside>
-    <section class="welcome-tour" id="welcome-tour" aria-label="60-second tour of AI Spark" hidden>
+    <section class="welcome-tour" id="welcome-tour" aria-label="60-second tour of Goldbell AI" hidden>
       <div class="welcome-tour-inner">
         <div class="welcome-tour-head">
           <div>
@@ -138,13 +139,14 @@
     <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
       <div class="container">
         <div class="nav-inner">
-          <a href="#hero" class="nav-logo" aria-label="AI Spark Home">
+          <a href="#hero" class="nav-logo" aria-label="Goldbell AI Home">
             <div class="nav-logo-icon" aria-hidden="true">✨</div>
-            AI Spark
+            Goldbell AI
           </a>
           <ul class="nav-links" role="list">
             <li><a href="#why-ai">Why AI?</a></li>
             <li><a href="#newsletter">This Month</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
             <li><a href="#learning-path">Learn</a></li>
             <li class="nav-group" data-nav-group>
               <button
@@ -210,7 +212,26 @@
                 </li>
               </ul>
             </li>
-            <li><a href="#prompt-master">Prompts</a></li>
+            <li class="nav-group" data-nav-group>
+              <button
+                type="button"
+                class="nav-group-btn"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="nav-prompts-menu"
+              >
+                Prompts
+                <span class="nav-group-caret" aria-hidden="true">▾</span>
+              </button>
+              <ul class="nav-submenu" id="nav-prompts-menu" role="menu" hidden>
+                <li role="none">
+                  <a role="menuitem" href="#prompt-engineer">Refiner</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="#prompt-master">Library</a>
+                </li>
+              </ul>
+            </li>
             <li><a href="#stories">Stories</a></li>
           </ul>
           <div class="nav-actions">
@@ -246,17 +267,19 @@
       <div class="mobile-menu-header">
         <div class="nav-logo">
           <div class="nav-logo-icon">✨</div>
-          AI Spark
+          Goldbell AI
         </div>
         <button class="theme-toggle" id="mobile-close" aria-label="Close menu">✕</button>
       </div>
       <a href="#why-ai" class="mobile-link">Why AI?</a>
       <a href="#newsletter" class="mobile-link">This Month</a>
+      <a href="#roadmap" class="mobile-link">Roadmap</a>
       <a href="#learning-path" class="mobile-link">Learn</a>
       <a href="#task-decision-helper" class="mobile-link">Start</a>
       <a href="#beginner-glossary" class="mobile-link">Glossary</a>
       <a href="#ai-terms-flashcards" class="mobile-link">Flashcards</a>
       <a href="#first-prompt-builder" class="mobile-link">Builder</a>
+      <a href="#prompt-engineer" class="mobile-link">Refiner</a>
       <a href="#prompt-comparison-tool" class="mobile-link">Compare</a>
       <a href="#safe-prompt-templates" class="mobile-link">Templates</a>
       <a href="#beginner-checklist" class="mobile-link">Checklist</a>
@@ -772,6 +795,99 @@
         </div>
       </section>
 
+      <!-- ── 3-Year AI Roadmap ── -->
+      <section class="section" id="roadmap" aria-labelledby="roadmap-heading">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-label">🗺️ Strategic Plan</div>
+            <h2 class="section-title" id="roadmap-heading">3-Year AI Roadmap</h2>
+            <p class="section-subtitle">
+              Twelve monthly issues per year, three years end-to-end — from first ChatGPT prompt
+              to portfolio-level AI strategy. Pick a year to see the monthly themes.
+            </p>
+          </div>
+
+          <div class="roadmap-bg reveal">
+            <div class="roadmap-stats" aria-label="Roadmap snapshot">
+              <div class="roadmap-stat">
+                <div class="roadmap-stat-num">12</div>
+                <div class="roadmap-stat-label">Year 1 monthly issues</div>
+              </div>
+              <div class="roadmap-stat">
+                <div class="roadmap-stat-num">6</div>
+                <div class="roadmap-stat-label">Strategic pillars (Y2 + Y3)</div>
+              </div>
+              <div class="roadmap-stat">
+                <div class="roadmap-stat-num">3</div>
+                <div class="roadmap-stat-label">Hands-on Year 1 workshops</div>
+              </div>
+              <div class="roadmap-stat">
+                <div class="roadmap-stat-num">100%</div>
+                <div class="roadmap-stat-label">Policy-aligned</div>
+              </div>
+            </div>
+
+            <div
+              class="roadmap-tabs"
+              role="tablist"
+              aria-label="Choose roadmap year"
+              id="roadmap-tabs"
+            >
+              <button
+                class="roadmap-tab is-active"
+                type="button"
+                role="tab"
+                data-roadmap-year="1"
+                aria-selected="true"
+                aria-controls="roadmap-panel"
+              >
+                <span class="roadmap-tab-year">Year 1 · Monthly</span>
+                <span class="roadmap-tab-theme">Foundations &amp; Productivity</span>
+              </button>
+              <button
+                class="roadmap-tab"
+                type="button"
+                role="tab"
+                data-roadmap-year="2"
+                aria-selected="false"
+                tabindex="-1"
+                aria-controls="roadmap-panel"
+              >
+                <span class="roadmap-tab-year">Year 2 · Overview</span>
+                <span class="roadmap-tab-theme">Department Playbooks</span>
+              </button>
+              <button
+                class="roadmap-tab"
+                type="button"
+                role="tab"
+                data-roadmap-year="3"
+                aria-selected="false"
+                tabindex="-1"
+                aria-controls="roadmap-panel"
+              >
+                <span class="roadmap-tab-year">Year 3 · Overview</span>
+                <span class="roadmap-tab-theme">Scale, Governance &amp; ROI</span>
+              </button>
+            </div>
+
+            <div
+              class="roadmap-panel"
+              id="roadmap-panel"
+              role="tabpanel"
+              aria-live="polite"
+            >
+              <!-- Month cards injected by JS -->
+            </div>
+
+            <p class="roadmap-footnote">
+              <span aria-hidden="true">🛡️</span>
+              Every issue ships with a safety reminder. Confidential, customer, and financial data
+              stay out of public AI tools until IT approves them for company use.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- ── Learning Path ── -->
       <section class="section" id="learning-path">
         <div class="container">
@@ -890,6 +1006,8 @@
               remember before you try it.
             </p>
           </div>
+          <details class="section-collapse">
+            <summary>Show plain-English glossary</summary>
           <div class="glossary-bg reveal">
             <div
               class="glossary-term-list"
@@ -934,6 +1052,7 @@
               <!-- Glossary detail injected by JS -->
             </article>
           </div>
+          </details>
         </div>
       </section>
 
@@ -948,6 +1067,8 @@
               for safe workplace use.
             </p>
           </div>
+          <details class="section-collapse">
+            <summary>Open flashcard practice</summary>
           <div class="flashcards-bg reveal">
             <aside class="flashcards-guide" aria-label="How to use AI terms flashcards">
               <h3>Three-minute practice</h3>
@@ -1040,6 +1161,7 @@
               </div>
             </article>
           </div>
+          </details>
         </div>
       </section>
 
@@ -1205,6 +1327,237 @@
         </div>
       </section>
 
+      <!-- ── Prompt Engineer (AI refiner) ── -->
+      <section class="section" id="prompt-engineer">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-label">
+              🛠️ Prompt Engineer<span
+                class="section-time-cost"
+                aria-label="About one minute"
+                >1 min to refine</span
+              >
+            </div>
+            <h2 class="section-title">Refine a rough prompt with AI</h2>
+            <p class="section-subtitle">
+              Paste any rough idea. The refiner rewrites it using proven prompt-engineering best
+              practices: clear role, context, constraints, examples, and output format.
+            </p>
+          </div>
+          <div class="pe-bg reveal">
+            <div class="pe-controls" aria-label="Prompt refiner inputs">
+              <div class="builder-field">
+                <label for="pe-rough">Your rough prompt</label>
+                <textarea
+                  id="pe-rough"
+                  rows="6"
+                  placeholder="e.g. write an email to my team about delayed shipment"
+                  aria-describedby="pe-rough-help"
+                ></textarea>
+                <p id="pe-rough-help" class="builder-helper">
+                  <span aria-hidden="true">📝</span
+                  ><span
+                    ><strong>Rough is fine.</strong> The AI will add the missing role, context, and
+                    structure for you.</span
+                  >
+                </p>
+              </div>
+              <div class="pe-row">
+                <div class="builder-field">
+                  <label for="pe-goal">Goal</label>
+                  <select id="pe-goal">
+                    <option value="general">General task</option>
+                    <option value="email">Write an email</option>
+                    <option value="summary">Summarize content</option>
+                    <option value="brainstorm">Brainstorm ideas</option>
+                    <option value="explain">Explain a topic</option>
+                    <option value="code">Generate code</option>
+                    <option value="analysis">Analyze data</option>
+                    <option value="decision">Make a recommendation</option>
+                  </select>
+                </div>
+                <div class="builder-field">
+                  <label for="pe-tone">Tone</label>
+                  <select id="pe-tone">
+                    <option value="warm, professional, concise">Warm &amp; professional</option>
+                    <option value="simple, encouraging, jargon-free">Simple &amp; encouraging</option>
+                    <option value="direct, structured, action-oriented">Direct &amp; structured</option>
+                    <option value="formal and precise">Formal &amp; precise</option>
+                    <option value="casual and friendly">Casual &amp; friendly</option>
+                  </select>
+                </div>
+                <div class="builder-field">
+                  <label for="pe-format">Output format</label>
+                  <select id="pe-format">
+                    <option value="markdown with headings and bullets">Markdown with headings</option>
+                    <option value="numbered step-by-step list">Numbered steps</option>
+                    <option value="short email with subject line">Email + subject</option>
+                    <option value="table with clear columns">Table</option>
+                    <option value="plain prose, no formatting">Plain prose</option>
+                  </select>
+                </div>
+              </div>
+              <div class="pe-row">
+                <label class="comparison-toggle pe-toggle">
+                  <input type="checkbox" id="pe-include-examples" />
+                  <span
+                    ><strong>Few-shot examples</strong
+                    ><span>Ask refined prompt to include 1–2 worked examples.</span></span
+                  >
+                </label>
+                <label class="comparison-toggle pe-toggle">
+                  <input type="checkbox" id="pe-include-cot" />
+                  <span
+                    ><strong>Chain-of-thought</strong
+                    ><span>Request the model think step-by-step before answering.</span></span
+                  >
+                </label>
+              </div>
+              <p class="builder-safe-note" style="margin-top: 0.5rem;">
+                <span aria-hidden="true">🛡️</span
+                ><span
+                  >Requests go through this site's backend. Your OpenAI key stays on the server
+                  &mdash; it is never sent to your browser.</span
+                >
+              </p>
+              <div class="pe-actions">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="pe-refine-btn"
+                  onclick="refinePromptEngineer()"
+                >
+                  ✨ Refine with AI
+                </button>
+                <span class="pe-status" id="pe-status" aria-live="polite"></span>
+              </div>
+            </div>
+            <article class="builder-preview pe-preview" aria-label="Refined prompt">
+              <h3>Refined prompt</h3>
+              <div
+                class="builder-output pe-output"
+                id="pe-output"
+                aria-live="polite"
+                data-empty="Refined prompt will appear here after you click Refine."
+              ></div>
+              <div class="pe-output-actions">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="pe-copy-btn"
+                  onclick="copyRefinedPrompt(this)"
+                  disabled
+                >
+                  📋 Copy refined prompt
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="pe-test-btn"
+                  onclick="openPromptTester()"
+                  disabled
+                >
+                  🧪 Test this prompt
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-teal"
+                  id="pe-clear-btn"
+                  onclick="clearRefinedPrompt()"
+                >
+                  Clear
+                </button>
+              </div>
+              <p class="builder-safe-note">
+                <span aria-hidden="true">✅</span
+                ><span
+                  ><strong>Review before using:</strong> remove any confidential details and
+                  fact-check important claims before sending to AI.</span
+                >
+              </p>
+            </article>
+          </div>
+
+          <!-- Prompt tester: live chat using refined prompt as system message. -->
+          <section
+            class="pe-tester reveal"
+            id="pe-tester"
+            aria-label="Test the refined prompt in a live chat"
+            hidden
+          >
+            <header class="pe-tester-head">
+              <div>
+                <div class="section-label">🧪 Prompt tester</div>
+                <h3 class="pe-tester-title">Chat with your refined prompt</h3>
+                <p class="pe-tester-sub">
+                  The refined prompt above is sent as the system message. Send messages below to
+                  see how the model responds. History stays in your browser.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn btn-sm btn-secondary"
+                id="pe-tester-reset"
+                onclick="resetPromptTester()"
+              >
+                ♻️ Reset chat
+              </button>
+            </header>
+            <div
+              class="pe-chat-thread"
+              id="pe-chat-thread"
+              aria-live="polite"
+              data-dropzone
+            ></div>
+            <div class="pe-chat-attachments" id="pe-chat-attachments" hidden></div>
+            <form class="pe-chat-form" id="pe-chat-form" onsubmit="return false">
+              <textarea
+                id="pe-chat-input"
+                rows="2"
+                placeholder="Type a test message and press Enter…"
+                aria-label="Test message"
+              ></textarea>
+              <div class="pe-chat-actions">
+                <span class="pe-chat-meta" id="pe-chat-meta">0 turns · ~0 tokens</span>
+                <input
+                  type="file"
+                  id="pe-chat-file"
+                  multiple
+                  accept="image/png,image/jpeg,image/webp,image/gif,.pdf,.docx,.xlsx,.xls,.csv,.txt,.md,.json"
+                  hidden
+                />
+                <button
+                  type="button"
+                  class="btn btn-sm btn-secondary"
+                  id="pe-chat-attach-btn"
+                  onclick="document.getElementById('pe-chat-file').click()"
+                  aria-label="Attach file"
+                >
+                  📎 Attach
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-secondary"
+                  id="pe-chat-stop"
+                  onclick="stopPromptTester()"
+                  hidden
+                >
+                  ⏹ Stop
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm"
+                  id="pe-chat-send"
+                  onclick="sendPromptTester()"
+                >
+                  ➤ Send
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </section>
+
       <!-- ── Prompt Comparison Tool ── -->
       <section class="section" id="prompt-comparison-tool" aria-live="polite">
         <div class="container">
@@ -1216,6 +1569,8 @@
               context, and format details.
             </p>
           </div>
+          <details class="section-collapse">
+            <summary>Show comparison tool</summary>
           <div class="comparison-bg reveal">
             <div class="comparison-controls" aria-label="Prompt improvement choices">
               <h3>Add prompt ingredients</h3>
@@ -1279,6 +1634,7 @@
               <ul class="comparison-notes" id="comparison-notes"></ul>
             </article>
           </div>
+          </details>
         </div>
       </section>
 
@@ -1293,8 +1649,8 @@
               avoid, and a copy-ready prompt shape.
             </p>
           </div>
-          <details class="m-collapsible" open data-m-collapse="safe-templates">
-            <summary><span>Tap to open the safety templates</span></summary>
+          <details class="section-collapse">
+            <summary>Show safety templates</summary>
             <div class="risk-template-bg reveal">
               <div
                 class="risk-template-tabs"
@@ -1535,6 +1891,8 @@
               shape.
             </p>
           </div>
+          <details class="section-collapse">
+            <summary>Show guided scenarios</summary>
           <div class="scenarios-bg reveal">
             <div class="scenario-tabs" role="tablist" aria-label="Beginner AI workflow scenarios">
               <button
@@ -1603,6 +1961,7 @@
               <!-- Scenario detail injected by JS -->
             </article>
           </div>
+          </details>
         </div>
       </section>
 
@@ -1689,6 +2048,8 @@
               habit to use instead.
             </p>
           </div>
+          <details class="section-collapse">
+            <summary>Show myth buster</summary>
           <div class="myth-buster-bg reveal">
             <div class="myth-options" role="radiogroup" aria-label="Common AI safety myths">
               <button
@@ -1738,6 +2099,7 @@
               </p>
             </article>
           </div>
+          </details>
         </div>
       </section>
 
@@ -1752,6 +2114,8 @@
               accurate, and work-ready.
             </p>
           </div>
+          <details class="section-collapse">
+            <summary>Show output review checklist</summary>
           <div class="review-bg reveal">
             <div class="review-intro-card">
               <div class="review-intro-icon" aria-hidden="true">🧭</div>
@@ -1893,6 +2257,7 @@
               not send it just because AI wrote it.
             </p>
           </div>
+          </details>
         </div>
       </section>
 
@@ -1912,6 +2277,8 @@
               work.
             </p>
           </div>
+          <details class="section-collapse">
+            <summary>Open Prompt Master library</summary>
           <div class="prompt-master-bg reveal">
             <div class="pm-controls-bar">
               <div class="pm-controls">
@@ -2119,6 +2486,7 @@
               </button>
             </div>
           </div>
+          </details>
         </div>
       </section>
 
@@ -2132,6 +2500,8 @@
               A quick reference to help you use AI safely, responsibly, and effectively at work.
             </p>
           </div>
+          <details class="section-collapse">
+            <summary>Show Dos &amp; Don'ts</summary>
           <div class="dos-donts-grid reveal">
             <div class="dos-col">
               <h3>✅ Do this</h3>
@@ -2242,6 +2612,7 @@
               </ul>
             </div>
           </div>
+          </details>
         </div>
       </section>
 
@@ -2419,7 +2790,7 @@
       <div class="container">
         <div class="footer-masthead">
           <span class="footer-masthead-eyebrow">A monthly dispatch</span>
-          <h2 id="footer-masthead-title" class="footer-masthead-title">AI <em>Spark</em></h2>
+          <h2 id="footer-masthead-title" class="footer-masthead-title">Goldbell <em>AI</em></h2>
           <p class="footer-masthead-tagline">
             A friendly internal dispatch — making AI useful, practical and human for every team at
             the company.
@@ -2466,6 +2837,8 @@
             <h3>Prompts</h3>
             <ul class="footer-links">
               <li><a href="#prompt-master">All Prompts</a></li>
+              <li><a href="#first-prompt-builder">Prompt Builder</a></li>
+              <li><a href="#prompt-engineer">AI Refiner</a></li>
               <li>
                 <a href="#prompt-master" onclick="filterByCategory('Email &amp; Writing')"
                   >Email &amp; Writing</a
@@ -2506,7 +2879,7 @@
         <div class="footer-bottom">
           <div class="footer-bottom-left">
             <span class="footer-issue-pill">Vol. 1 · May 2026</span>
-            <span>© 2026 AI Spark — Internal Employee Newsletter</span>
+            <span>© 2026 Goldbell AI — Internal Employee Newsletter</span>
           </div>
           <div class="footer-bottom-right">
             <span>Built for our team</span>
@@ -2562,7 +2935,7 @@
         <div class="kbd-overlay-head">
           <div>
             <div class="kbd-overlay-eyebrow">Keyboard shortcuts</div>
-            <h2 id="kbd-overlay-title">Move around AI Spark faster</h2>
+            <h2 id="kbd-overlay-title">Move around Goldbell AI faster</h2>
           </div>
           <button
             type="button"
@@ -4967,7 +5340,7 @@
         if (logoClicks === 5) {
           logoClicks = 0;
           launchConfetti();
-          showToast("🎉 You found the Easter egg! You are an AI Spark pro!");
+          showToast("🎉 You found the Easter egg! You are a Goldbell AI pro!");
         }
       });
 
@@ -5196,6 +5569,693 @@
       <a class="m-cta-secondary" href="#prompt-master">🗂️ Browse Prompts</a>
       <a class="m-cta-primary" href="#learning-path">🚀 Start Learning</a>
     </nav>
+
+    <!-- ── Prompt Engineer refiner (OpenAI) ── -->
+    <script>
+      // ============================================================
+      // PROMPT ENGINEER — OpenAI refiner
+      // Insert your API key into one of these locations:
+      //   1. window.OPENAI_API_KEY in a <script> before this block
+      //   2. The in-page key field (saved to localStorage)
+      //   3. Hardcode PROMPT_ENGINEER_CONFIG.fallbackKey below (NOT recommended for public deploys)
+      // ============================================================
+      const PROMPT_ENGINEER_CONFIG = {
+        endpoint: "https://api.openai.com/v1/chat/completions",
+        model: "gpt-4o-mini",
+        temperature: 0.4,
+        maxTokens: 900,
+        storageKey: "promptEngineer.apiKey.v1",
+        fallbackKey: "" // optional: paste key here; left blank by default
+      };
+
+      const PROMPT_ENGINEER_SYSTEM = [
+        "You are an expert prompt engineer.",
+        "You take a rough user instruction and rewrite it into a clear, structured prompt suitable for an LLM.",
+        "Always apply these best practices:",
+        "1. Give the model a specific role.",
+        "2. State the task and success criteria clearly.",
+        "3. Include relevant context, constraints, and audience.",
+        "4. Specify the requested output format precisely.",
+        "5. Use placeholders like [topic], [audience], [data] for anything the user must fill in.",
+        "6. Keep the prompt concise but complete.",
+        "Return ONLY the refined prompt as plain text. Do NOT add explanations, preambles, or markdown code fences."
+      ].join("\n");
+
+      function getPromptEngineerKey() {
+        const fieldVal = document.getElementById("pe-key")?.value?.trim();
+        if (fieldVal) {
+          try {
+            localStorage.setItem(PROMPT_ENGINEER_CONFIG.storageKey, fieldVal);
+          } catch (_) {}
+          return fieldVal;
+        }
+        try {
+          const stored = localStorage.getItem(PROMPT_ENGINEER_CONFIG.storageKey);
+          if (stored) return stored;
+        } catch (_) {}
+        if (typeof window !== "undefined" && window.OPENAI_API_KEY) return window.OPENAI_API_KEY;
+        return PROMPT_ENGINEER_CONFIG.fallbackKey || "";
+      }
+
+      function clearPromptEngineerKey() {
+        try {
+          localStorage.removeItem(PROMPT_ENGINEER_CONFIG.storageKey);
+        } catch (_) {}
+        const field = document.getElementById("pe-key");
+        if (field) field.value = "";
+        setPromptEngineerStatus("Saved key cleared.", "ok");
+      }
+
+      function setPromptEngineerStatus(text, kind) {
+        const el = document.getElementById("pe-status");
+        if (!el) return;
+        el.textContent = text || "";
+        el.dataset.kind = kind || "";
+      }
+
+      function buildRefinerUserMessage() {
+        const rough = (document.getElementById("pe-rough")?.value || "").trim();
+        const goal = document.getElementById("pe-goal")?.value || "general";
+        const tone = document.getElementById("pe-tone")?.value || "warm, professional, concise";
+        const format =
+          document.getElementById("pe-format")?.value || "markdown with headings and bullets";
+        const wantsExamples = !!document.getElementById("pe-include-examples")?.checked;
+        const wantsCot = !!document.getElementById("pe-include-cot")?.checked;
+        const extras = [];
+        if (wantsExamples) extras.push("Include 1-2 short worked examples (few-shot).");
+        if (wantsCot)
+          extras.push(
+            "Instruct the model to think step-by-step internally before producing the final answer."
+          );
+        return [
+          "ROUGH USER PROMPT:",
+          rough || "(empty)",
+          "",
+          "REWRITE IT FOR THIS GOAL: " + goal,
+          "DESIRED TONE: " + tone,
+          "OUTPUT FORMAT THE FINAL MODEL SHOULD RETURN: " + format,
+          extras.length ? "ADDITIONAL TECHNIQUES: " + extras.join(" ") : "",
+          "",
+          "Return only the refined prompt itself."
+        ]
+          .filter(Boolean)
+          .join("\n");
+      }
+
+      async function refinePromptEngineer() {
+        const rough = (document.getElementById("pe-rough")?.value || "").trim();
+        if (!rough) {
+          setPromptEngineerStatus("Type a rough prompt first.", "err");
+          document.getElementById("pe-rough")?.focus();
+          return;
+        }
+        const btn = document.getElementById("pe-refine-btn");
+        const out = document.getElementById("pe-output");
+        const copyBtn = document.getElementById("pe-copy-btn");
+        if (btn) {
+          btn.disabled = true;
+          btn.dataset.originalLabel = btn.dataset.originalLabel || btn.textContent;
+          btn.textContent = "⏳ Refining…";
+        }
+        setPromptEngineerStatus("Refining…", "loading");
+        if (out) out.textContent = "";
+        if (copyBtn) copyBtn.disabled = true;
+
+        try {
+          const response = await fetch("/api/refine", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              rough: rough,
+              goal: document.getElementById("pe-goal")?.value || "general",
+              tone:
+                document.getElementById("pe-tone")?.value || "warm, professional, concise",
+              format:
+                document.getElementById("pe-format")?.value ||
+                "markdown with headings and bullets",
+              includeExamples: !!document.getElementById("pe-include-examples")?.checked,
+              includeCot: !!document.getElementById("pe-include-cot")?.checked
+            })
+          });
+          if (!response.ok) {
+            let detail = "";
+            try {
+              const errJson = await response.json();
+              detail = errJson?.error || JSON.stringify(errJson);
+            } catch (_) {
+              detail = await response.text();
+            }
+            throw new Error("Refine " + response.status + ": " + (detail || "request failed"));
+          }
+          const data = await response.json();
+          const refined = data?.refined?.trim();
+          if (!refined) throw new Error("Empty response from server.");
+          if (out) out.textContent = refined;
+          if (copyBtn) copyBtn.disabled = false;
+          const testBtn = document.getElementById("pe-test-btn");
+          if (testBtn) testBtn.disabled = false;
+          setPromptEngineerStatus("Done.", "ok");
+        } catch (err) {
+          console.error("[prompt-engineer]", err);
+          if (out) out.textContent = "";
+          setPromptEngineerStatus(err.message || "Refine failed.", "err");
+        } finally {
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = btn.dataset.originalLabel || "✨ Refine with AI";
+          }
+        }
+      }
+
+      function copyRefinedPrompt(btn) {
+        const out = document.getElementById("pe-output");
+        const text = out?.textContent?.trim();
+        if (!text) return;
+        const done = () => {
+          if (!btn) return;
+          const original = btn.dataset.originalLabel || btn.textContent;
+          btn.dataset.originalLabel = original;
+          btn.textContent = "✅ Copied!";
+          setTimeout(() => {
+            btn.textContent = original;
+          }, 1600);
+        };
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(done);
+        } else {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+          } catch (_) {}
+          document.body.removeChild(ta);
+          done();
+        }
+      }
+
+      function clearRefinedPrompt() {
+        const out = document.getElementById("pe-output");
+        if (out) out.textContent = "";
+        const copyBtn = document.getElementById("pe-copy-btn");
+        if (copyBtn) copyBtn.disabled = true;
+        const testBtn = document.getElementById("pe-test-btn");
+        if (testBtn) testBtn.disabled = true;
+        const tester = document.getElementById("pe-tester");
+        if (tester) tester.hidden = true;
+        setPromptEngineerStatus("", "");
+      }
+
+      // ─────────────────────────────────────────────────────────────
+      // Prompt tester (chat) — SSE stream, attachments, localStorage.
+      // ─────────────────────────────────────────────────────────────
+      const PE_CHAT = {
+        storageKey: "goldbell-ai:chat-test-history.v1",
+        maxTurns: 30,
+        maxAttachments: 4,
+        maxImageBytes: 5 * 1024 * 1024,
+        maxDocBytes: 10 * 1024 * 1024,
+        history: [],
+        pending: [], // { id, name, size, mimeType, kind: image|doc, dataUrl?, text?, status }
+        controller: null
+      };
+
+      function loadPromptTesterHistory() {
+        try {
+          const raw = localStorage.getItem(PE_CHAT.storageKey);
+          PE_CHAT.history = raw ? JSON.parse(raw) : [];
+        } catch (_) {
+          PE_CHAT.history = [];
+        }
+      }
+      function savePromptTesterHistory() {
+        // Quota fallback: drop oldest turns until it fits or empty.
+        let attempt = JSON.stringify(PE_CHAT.history);
+        while (true) {
+          try {
+            localStorage.setItem(PE_CHAT.storageKey, attempt);
+            return;
+          } catch (e) {
+            if (e.name !== "QuotaExceededError" || PE_CHAT.history.length === 0) {
+              try { localStorage.removeItem(PE_CHAT.storageKey); } catch (_) {}
+              return;
+            }
+            PE_CHAT.history.shift();
+            attempt = JSON.stringify(PE_CHAT.history);
+          }
+        }
+      }
+      function contentTextLen(content) {
+        if (typeof content === "string") return content.length;
+        if (!Array.isArray(content)) return 0;
+        return content.reduce((n, p) => n + (p.type === "text" ? (p.text?.length || 0) : 0), 0);
+      }
+      function renderPromptTesterMeta() {
+        const meta = document.getElementById("pe-chat-meta");
+        if (!meta) return;
+        const userTurns = PE_CHAT.history.filter((m) => m.role === "user").length;
+        const chars = PE_CHAT.history.reduce((n, m) => n + contentTextLen(m.content), 0);
+        const tokenEst = Math.ceil(chars / 4);
+        meta.textContent = userTurns + " turn" + (userTurns === 1 ? "" : "s") + " · ~" + tokenEst + " tokens";
+      }
+      function renderPromptTesterThread() {
+        const thread = document.getElementById("pe-chat-thread");
+        if (!thread) return;
+        thread.innerHTML = "";
+        for (const m of PE_CHAT.history) {
+          appendPromptTesterMessage(m.role, m.content);
+        }
+        thread.scrollTop = thread.scrollHeight;
+        renderPromptTesterMeta();
+      }
+
+      function openPromptTester() {
+        const tester = document.getElementById("pe-tester");
+        if (!tester) return;
+        const refined = document.getElementById("pe-output")?.textContent?.trim();
+        if (!refined) {
+          setPromptEngineerStatus("Refine a prompt first.", "err");
+          return;
+        }
+        loadPromptTesterHistory();
+        renderPromptTesterThread();
+        tester.hidden = false;
+        tester.scrollIntoView({ behavior: "smooth", block: "start" });
+        setTimeout(() => document.getElementById("pe-chat-input")?.focus(), 400);
+      }
+
+      function resetPromptTester() {
+        if (PE_CHAT.controller) {
+          PE_CHAT.controller.abort();
+          PE_CHAT.controller = null;
+        }
+        PE_CHAT.history = [];
+        PE_CHAT.pending = [];
+        renderPromptTesterPending();
+        savePromptTesterHistory();
+        renderPromptTesterThread();
+      }
+
+      function stopPromptTester() {
+        if (PE_CHAT.controller) {
+          PE_CHAT.controller.abort();
+          PE_CHAT.controller = null;
+        }
+      }
+
+      function setPromptTesterBusy(busy) {
+        const send = document.getElementById("pe-chat-send");
+        const stop = document.getElementById("pe-chat-stop");
+        const input = document.getElementById("pe-chat-input");
+        const attach = document.getElementById("pe-chat-attach-btn");
+        if (send) send.disabled = busy;
+        if (stop) stop.hidden = !busy;
+        if (input) input.disabled = busy;
+        if (attach) attach.disabled = busy;
+      }
+
+      function appendPromptTesterMessage(role, content) {
+        const thread = document.getElementById("pe-chat-thread");
+        if (!thread) return null;
+        const el = document.createElement("div");
+        el.className = "pe-chat-msg";
+        el.dataset.role = role;
+
+        // Render attachments (image_url parts) and doc-text part separately.
+        if (Array.isArray(content)) {
+          const attachWrap = document.createElement("div");
+          attachWrap.className = "pe-chat-msg-attachments";
+          let hasAttach = false;
+          let mainText = "";
+          for (const part of content) {
+            if (part.type === "image_url") {
+              const img = document.createElement("img");
+              img.src = part.image_url?.url || "";
+              img.alt = "attached image";
+              attachWrap.appendChild(img);
+              hasAttach = true;
+            } else if (part.type === "text") {
+              // Doc-extract parts are prefixed with "[Attached file: name]\n".
+              if (part.text?.startsWith("[Attached file:")) {
+                const tag = document.createElement("span");
+                tag.className = "pe-chat-msg-doc";
+                const m = part.text.match(/^\[Attached file: ([^\]]+)\]/);
+                tag.textContent = "📄 " + (m ? m[1] : "file");
+                attachWrap.appendChild(tag);
+                hasAttach = true;
+              } else {
+                mainText += (mainText ? "\n" : "") + part.text;
+              }
+            }
+          }
+          if (hasAttach) el.appendChild(attachWrap);
+          if (mainText) {
+            const textEl = document.createElement("div");
+            textEl.textContent = mainText;
+            el.appendChild(textEl);
+          }
+        } else {
+          el.textContent = String(content || "");
+        }
+
+        thread.appendChild(el);
+        thread.scrollTop = thread.scrollHeight;
+        return el;
+      }
+
+      // ── Attachments ──────────────────────────────────────────────
+      function fmtBytes(n) {
+        if (n < 1024) return n + " B";
+        if (n < 1024 * 1024) return (n / 1024).toFixed(1) + " KB";
+        return (n / (1024 * 1024)).toFixed(1) + " MB";
+      }
+      function fileToDataUrl(file) {
+        return new Promise((resolve, reject) => {
+          const r = new FileReader();
+          r.onerror = () => reject(new Error("Read failed: " + file.name));
+          r.onload = () => resolve(r.result);
+          r.readAsDataURL(file);
+        });
+      }
+      function isImageFile(file) {
+        if (file.type && file.type.startsWith("image/")) return true;
+        return /\.(png|jpe?g|webp|gif)$/i.test(file.name || "");
+      }
+      function renderPromptTesterPending() {
+        const wrap = document.getElementById("pe-chat-attachments");
+        if (!wrap) return;
+        wrap.innerHTML = "";
+        if (PE_CHAT.pending.length === 0) {
+          wrap.hidden = true;
+          return;
+        }
+        wrap.hidden = false;
+        for (const att of PE_CHAT.pending) {
+          const chip = document.createElement("div");
+          chip.className = "pe-chat-chip";
+          chip.dataset.status = att.status;
+          if (att.kind === "image" && att.dataUrl) {
+            const img = document.createElement("img");
+            img.src = att.dataUrl;
+            img.className = "pe-chat-chip-thumb";
+            chip.appendChild(img);
+          } else {
+            const ic = document.createElement("span");
+            ic.className = "pe-chat-chip-icon";
+            ic.textContent = "📄";
+            chip.appendChild(ic);
+          }
+          const name = document.createElement("span");
+          name.className = "pe-chat-chip-name";
+          name.textContent = att.name;
+          chip.appendChild(name);
+          const size = document.createElement("span");
+          size.className = "pe-chat-chip-size";
+          size.textContent =
+            att.status === "loading" ? "…" :
+            att.status === "error" ? "error" :
+            fmtBytes(att.size);
+          chip.appendChild(size);
+          const x = document.createElement("button");
+          x.type = "button";
+          x.className = "pe-chat-chip-remove";
+          x.setAttribute("aria-label", "Remove " + att.name);
+          x.textContent = "✕";
+          x.onclick = () => {
+            PE_CHAT.pending = PE_CHAT.pending.filter((a) => a.id !== att.id);
+            renderPromptTesterPending();
+          };
+          chip.appendChild(x);
+          wrap.appendChild(chip);
+        }
+      }
+      async function addPromptTesterFiles(fileList) {
+        const files = Array.from(fileList || []);
+        if (files.length === 0) return;
+        for (const file of files) {
+          if (PE_CHAT.pending.length >= PE_CHAT.maxAttachments) {
+            appendPromptTesterMessage(
+              "error",
+              "Attachment cap reached (max " + PE_CHAT.maxAttachments + "). Remove one first."
+            );
+            break;
+          }
+          const isImg = isImageFile(file);
+          const cap = isImg ? PE_CHAT.maxImageBytes : PE_CHAT.maxDocBytes;
+          if (file.size > cap) {
+            appendPromptTesterMessage(
+              "error",
+              file.name + " too large (max " + fmtBytes(cap) + ")."
+            );
+            continue;
+          }
+          const att = {
+            id: "att-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8),
+            name: file.name,
+            size: file.size,
+            mimeType: file.type || "application/octet-stream",
+            kind: isImg ? "image" : "doc",
+            status: "loading"
+          };
+          PE_CHAT.pending.push(att);
+          renderPromptTesterPending();
+          try {
+            const dataUrl = await fileToDataUrl(file);
+            if (isImg) {
+              att.dataUrl = dataUrl;
+              att.status = "ready";
+            } else {
+              const b64 = String(dataUrl).split(",")[1] || "";
+              const r = await fetch("/api/extract", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  filename: file.name,
+                  mimeType: att.mimeType,
+                  base64: b64
+                })
+              });
+              const j = await r.json();
+              if (!r.ok) throw new Error(j.error || ("Extract " + r.status));
+              att.text = j.text;
+              att.status = "ready";
+            }
+          } catch (err) {
+            console.error("[pe-chat attach]", err);
+            att.status = "error";
+            att.error = err.message || "Attach failed";
+            appendPromptTesterMessage("error", file.name + ": " + att.error);
+          }
+          renderPromptTesterPending();
+        }
+      }
+
+      async function sendPromptTester() {
+        const input = document.getElementById("pe-chat-input");
+        const text = (input?.value || "").trim();
+        const readyPending = PE_CHAT.pending.filter((a) => a.status === "ready");
+        if (!text && readyPending.length === 0) return;
+        const refined = document.getElementById("pe-output")?.textContent?.trim();
+        if (!refined) {
+          setPromptEngineerStatus("Refine a prompt first.", "err");
+          return;
+        }
+        if (PE_CHAT.history.filter((m) => m.role === "user").length >= PE_CHAT.maxTurns) {
+          appendPromptTesterMessage("error", "Turn cap reached (" + PE_CHAT.maxTurns + "). Reset chat to continue.");
+          return;
+        }
+
+        // Build OpenAI-style content.
+        let userContent;
+        if (readyPending.length === 0) {
+          userContent = text;
+        } else {
+          const parts = [];
+          if (text) parts.push({ type: "text", text });
+          for (const att of readyPending) {
+            if (att.kind === "image") {
+              parts.push({ type: "image_url", image_url: { url: att.dataUrl } });
+            } else if (att.text) {
+              parts.push({
+                type: "text",
+                text: "[Attached file: " + att.name + "]\n" + att.text
+              });
+            }
+          }
+          userContent = parts;
+        }
+
+        PE_CHAT.history.push({ role: "user", content: userContent });
+        savePromptTesterHistory();
+        appendPromptTesterMessage("user", userContent);
+        PE_CHAT.pending = [];
+        renderPromptTesterPending();
+        if (input) input.value = "";
+        renderPromptTesterMeta();
+
+        const assistantEl = appendPromptTesterMessage("assistant", "");
+        const cursor = document.createElement("span");
+        cursor.className = "pe-chat-cursor";
+        assistantEl.appendChild(cursor);
+
+        setPromptTesterBusy(true);
+        PE_CHAT.controller = new AbortController();
+        let accumulated = "";
+
+        try {
+          const response = await fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
+            body: JSON.stringify({
+              systemPrompt: refined,
+              messages: PE_CHAT.history.slice(-12)
+            }),
+            signal: PE_CHAT.controller.signal
+          });
+          if (!response.ok || !response.body) {
+            throw new Error("Chat " + response.status + " — request failed.");
+          }
+          const reader = response.body.getReader();
+          const decoder = new TextDecoder();
+          let buf = "";
+          let streamDone = false;
+          while (!streamDone) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            buf += decoder.decode(value, { stream: true });
+            const lines = buf.split("\n");
+            buf = lines.pop() || "";
+            for (const line of lines) {
+              const trimmed = line.trim();
+              if (!trimmed.startsWith("data:")) continue;
+              const payload = trimmed.slice(5).trim();
+              if (payload === "[DONE]") {
+                streamDone = true;
+                break;
+              }
+              try {
+                const json = JSON.parse(payload);
+                if (json.error) throw new Error(json.error);
+                if (json.token) {
+                  accumulated += json.token;
+                  assistantEl.textContent = accumulated;
+                  assistantEl.appendChild(cursor);
+                  const thread = document.getElementById("pe-chat-thread");
+                  if (thread) thread.scrollTop = thread.scrollHeight;
+                }
+              } catch (innerErr) {
+                if (innerErr.message && innerErr.message !== "Unexpected end of JSON input") {
+                  throw innerErr;
+                }
+              }
+            }
+          }
+          try { reader.cancel(); } catch (_) {}
+          cursor.remove();
+          if (accumulated) {
+            PE_CHAT.history.push({ role: "assistant", content: accumulated });
+            savePromptTesterHistory();
+            renderPromptTesterMeta();
+          } else {
+            assistantEl.remove();
+            appendPromptTesterMessage("error", "Empty response from model.");
+          }
+        } catch (err) {
+          cursor.remove();
+          if (err.name === "AbortError") {
+            if (accumulated) {
+              PE_CHAT.history.push({ role: "assistant", content: accumulated + " [stopped]" });
+              savePromptTesterHistory();
+            } else {
+              assistantEl.remove();
+            }
+          } else {
+            console.error("[pe-chat]", err);
+            assistantEl.remove();
+            appendPromptTesterMessage("error", err.message || "Chat failed.");
+          }
+        } finally {
+          PE_CHAT.controller = null;
+          setPromptTesterBusy(false);
+          document.getElementById("pe-chat-input")?.focus();
+        }
+      }
+
+      // Enter to send, Shift+Enter newline. File picker + drag-drop wiring.
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.getElementById("pe-chat-input");
+        if (input) {
+          input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              sendPromptTester();
+            }
+          });
+        }
+        const fileInput = document.getElementById("pe-chat-file");
+        if (fileInput) {
+          fileInput.addEventListener("change", (e) => {
+            addPromptTesterFiles(e.target.files);
+            e.target.value = ""; // allow same file again
+          });
+        }
+        const thread = document.getElementById("pe-chat-thread");
+        if (thread) {
+          const setActive = (on) => {
+            if (on) thread.setAttribute("data-drop-active", "");
+            else thread.removeAttribute("data-drop-active");
+          };
+          ["dragenter", "dragover"].forEach((ev) =>
+            thread.addEventListener(ev, (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setActive(true);
+            }),
+          );
+          ["dragleave", "dragend"].forEach((ev) =>
+            thread.addEventListener(ev, (e) => {
+              e.preventDefault();
+              setActive(false);
+            }),
+          );
+          thread.addEventListener("drop", (e) => {
+            e.preventDefault();
+            setActive(false);
+            const files = e.dataTransfer?.files;
+            if (files?.length) addPromptTesterFiles(files);
+          });
+        }
+        // Paste-to-attach for images.
+        if (input) {
+          input.addEventListener("paste", (e) => {
+            const items = e.clipboardData?.items;
+            if (!items) return;
+            const files = [];
+            for (const it of items) {
+              if (it.kind === "file") {
+                const f = it.getAsFile();
+                if (f) files.push(f);
+              }
+            }
+            if (files.length) {
+              e.preventDefault();
+              addPromptTesterFiles(files);
+            }
+          });
+        }
+      });
+
+      // Hydrate saved key on load (does not echo to console)
+      (function hydratePromptEngineerKey() {
+        try {
+          const stored = localStorage.getItem(PROMPT_ENGINEER_CONFIG.storageKey);
+          const field = document.getElementById("pe-key");
+          if (stored && field) field.value = stored;
+        } catch (_) {}
+      })();
+    </script>
+
     <script>
       // ── Mobile sticky CTA visibility + collapsible-section toggle ──
       (function () {

@@ -15,7 +15,10 @@
     "serve": "vite preview --host 0.0.0.0 --port ${PORT:-5173}",
     "studio": "cd remotion-hero && npm start",
     "start": "node scripts/start.js",
-    "start:railway": "npm run serve",
+    "start:server": "node server/index.js",
+    "start:railway": "node server/index.js",
+    "dev:server": "PORT=3001 node --watch server/index.js",
+    "dev:full": "concurrently -k -n web,api -c green,magenta \"npm run dev:web\" \"npm run dev:server\"",
     "dev": "concurrently -k -n web,studio -c green,blue \"npm run dev:web\" \"npm run studio\"",
     "force-render": "npm run render && npm run build:site && npm run serve",
     "lint": "eslint .",
@@ -37,6 +40,13 @@
     "*.{js,mjs,ts,tsx}": "eslint --fix",
     "*.css": "stylelint --fix",
     "*.{html,css,js,mjs,ts,tsx,json,md}": "prettier --write"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "mammoth": "^1.12.0",
+    "pdf-parse": "^1.1.4",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

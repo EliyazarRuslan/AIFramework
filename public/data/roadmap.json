@@ -1,0 +1,578 @@
+[
+  {
+    "issue": 1, "year": 1, "month": 1, "kicker": "WELCOME · AI STARTER GUIDE", "workshop": false,
+    "title": "Your introduction to AI & ChatGPT",
+    "subtitle": "Build a shared vocabulary — what AI is, what ChatGPT does, and which plan fits which work.",
+    "benefit": "Start with the basics so every conversation builds on the same foundation.",
+    "why": [
+      "Understand the difference between AI, generative AI, and ChatGPT.",
+      "Know which ChatGPT plan fits which kind of work.",
+      "Build a shared vocabulary before going hands-on."
+    ],
+    "prompt": "Explain in 100 words what generative AI is, how it differs from traditional automation, and three examples I would see in my daily work. Keep it simple. Add 2 myths to avoid.",
+    "challenge": "Spend 10 minutes asking ChatGPT three questions about your role, and note what felt useful versus what felt wrong.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Never paste confidential, customer, or financial data into any AI tool until IT has approved it for company use.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 2, "year": 1, "month": 2, "kicker": "CHATGPT BASICS", "workshop": false,
+    "title": "Meet ChatGPT: your everyday work partner",
+    "subtitle": "Learn how to ask better questions, refine answers, and turn rough notes into useful first drafts.",
+    "benefit": "Draft, rewrite, summarise, explain, brainstorm, translate, and plan faster.",
+    "why": [
+      "Use a simple prompt formula: role, task, context, output, tone.",
+      "Improve email, report, and meeting preparation quality.",
+      "Turn blank-page work into a faster first draft."
+    ],
+    "prompt": "Act as a professional communications assistant. Rewrite the message below to be clearer, warmer, and concise. Keep the meaning unchanged. Message: [paste text].",
+    "challenge": "Use ChatGPT to rewrite one internal message into a clearer version before sending it.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Review every AI output before sharing. You own the final message and judgement.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 3, "year": 1, "month": 3, "kicker": "PROMPTING LAB", "workshop": true,
+    "title": "Prompt better, get better results",
+    "subtitle": "Workshop month: practise hands-on prompting and learn how to guide ChatGPT with clear context and constraints.",
+    "benefit": "Better prompts reduce rework and help AI produce more useful answers.",
+    "why": [
+      "Learn the difference between vague and strong prompts.",
+      "Practise prompt refinement and follow-up questions.",
+      "Build your personal library of reusable prompts."
+    ],
+    "prompt": "Act as an expert prompt coach. Improve this prompt for a business audience and explain what you changed and why: [paste prompt].",
+    "challenge": "Create five reusable prompts for your role and share one with your team.",
+    "card04Title": "Hands-on session",
+    "card04Text": "Join the live workshop to practise prompt refinement with your team this month.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 4, "year": 1, "month": 4, "kicker": "WRITING & COMMUNICATION", "workshop": false,
+    "title": "Write faster and communicate clearly",
+    "subtitle": "Use AI to make messages clearer, more professional, and more audience-ready.",
+    "benefit": "Reduce drafting time while improving clarity, tone, and structure.",
+    "why": [
+      "Create first drafts for emails, memos, agendas, and summaries.",
+      "Adjust tone for customers, managers, or cross-functional teams.",
+      "Turn bullet points into a polished update."
+    ],
+    "prompt": "Turn these bullet points into a professional update for senior management. Keep it concise, action-oriented, and easy to scan: [paste bullets].",
+    "challenge": "Take one rough note and ask ChatGPT to turn it into a polished email or short report.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Check facts, names, commitments, and dates manually before sending.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 5, "year": 1, "month": 5, "kicker": "RESEARCH & SUMMARIES", "workshop": false,
+    "title": "From information overload to clarity",
+    "subtitle": "Use AI to summarise documents, compare options, and prepare decision-ready notes.",
+    "benefit": "Read faster, extract key points, and convert long material into useful action.",
+    "why": [
+      "Summarise policies, reports, meeting notes, or articles.",
+      "Ask for pros, cons, risks, and open questions.",
+      "Create comparison tables for better decisions."
+    ],
+    "prompt": "Summarise this document for a busy manager. Include: 5 key points, 3 risks, 3 actions, and questions we should clarify. Text: [paste content].",
+    "challenge": "Summarise one non-confidential document into a one-page brief.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Verify facts, sources, and dates. AI summaries can miss nuance or overstate certainty.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 6, "year": 1, "month": 6, "kicker": "DATA & DECISIONS", "workshop": true,
+    "title": "Make data easier to understand",
+    "subtitle": "Workshop month: learn how AI can help explain trends, compare figures, and turn data into business commentary.",
+    "benefit": "Move from raw numbers to clearer insights, faster.",
+    "why": [
+      "Ask questions about spreadsheet trends and variances.",
+      "Create first-draft commentary for reports.",
+      "Spot outliers, missing data, and follow-up questions."
+    ],
+    "prompt": "Act as a business analyst. Review the data below and produce: key trends, possible reasons, risks, and recommended next actions. Data: [paste table].",
+    "challenge": "Bring a sample non-confidential dataset or report and create a one-page insight summary.",
+    "card04Title": "Hands-on session",
+    "card04Text": "Bring a dataset to the workshop and turn it into a one-page commentary together.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 7, "year": 1, "month": 7, "kicker": "DEPARTMENT USE CASES", "workshop": false,
+    "title": "AI for every team, not just IT",
+    "subtitle": "Identify practical AI use cases across HR, Finance, Sales, Operations, Customer Service, IT, and leadership.",
+    "benefit": "The biggest value appears when AI solves real department pain points.",
+    "why": [
+      "Map recurring tasks that involve drafting, reviewing, summarising, or analysing.",
+      "Prioritise use cases by value, frequency, and risk.",
+      "Create team-specific prompt packs."
+    ],
+    "prompt": "Act as an AI use-case consultant. For this department, suggest 10 practical AI use cases ranked by value, effort, and risk. Department: [name].",
+    "challenge": "Submit three use cases from your department using the use-case template.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Escalate high-risk use cases involving customers, HR, finance, legal, safety, or compliance.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 8, "year": 1, "month": 8, "kicker": "WORKFLOW IMPROVEMENT", "workshop": false,
+    "title": "Redesign the work, not just the tools",
+    "subtitle": "Use AI to improve processes, SOPs, checklists, FAQs, and repeatable workflows.",
+    "benefit": "Reduce manual effort and make work more consistent across teams.",
+    "why": [
+      "Turn informal know-how into standard checklists.",
+      "Improve SOP clarity and handover quality.",
+      "Find bottlenecks in repetitive processes."
+    ],
+    "prompt": "Review this process and suggest how AI can support each step. Show the current step, AI support, human review point, and expected benefit. Process: [paste process].",
+    "challenge": "Pick one workflow and map where AI can help draft, review, summarise, or analyse.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Keep humans responsible for approval points and final decisions.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 9, "year": 1, "month": 9, "kicker": "AI CHAMPIONS", "workshop": true,
+    "title": "Build, test, and share real use cases",
+    "subtitle": "Workshop month: departments turn ideas into reusable prompt workflows and lightweight pilots.",
+    "benefit": "Adoption grows faster when practical examples are shared by trusted colleagues.",
+    "why": [
+      "Select high-value, low-risk use cases.",
+      "Build prompt flows and reusable templates.",
+      "Create simple success measures such as time saved or quality improved."
+    ],
+    "prompt": "Help me turn this AI use case into a repeatable prompt workflow. Include inputs, prompt steps, output format, human review, and success metric. Use case: [describe].",
+    "challenge": "Create one department prompt workflow and test it with sample information.",
+    "card04Title": "Hands-on session",
+    "card04Text": "Champions cohort meets this month — share your pilot and learn from peers.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 10, "year": 1, "month": 10, "kicker": "RESPONSIBLE AI", "workshop": false,
+    "title": "Use AI safely and confidently",
+    "subtitle": "Strengthen governance: privacy, accuracy, fairness, human review, and clear accountability.",
+    "benefit": "Good governance helps people use AI with confidence instead of uncertainty.",
+    "why": [
+      "Know what data should never be entered into AI tools.",
+      "Use a simple risk checklist before high-impact tasks.",
+      "Build human review into every AI-assisted workflow."
+    ],
+    "prompt": "Act as a responsible AI reviewer. Assess this proposed AI use case for privacy, accuracy, bias, compliance, and human review risks. Use case: [describe].",
+    "challenge": "Review one team use case with the responsible AI checklist.",
+    "card04Title": "Safety reminder",
+    "card04Text": "For sensitive or regulated topics, get the right review before using AI outputs.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 11, "year": 1, "month": 11, "kicker": "INNOVATION WITH AI", "workshop": false,
+    "title": "From productivity to possibility",
+    "subtitle": "Use AI to generate new ideas, test scenarios, and design better customer or employee experiences.",
+    "benefit": "AI can help us improve existing work and imagine new ways to deliver value.",
+    "why": [
+      "Brainstorm service improvements and customer experience ideas.",
+      "Run scenario planning and role-play objections.",
+      "Prototype training, communication, or process improvements faster."
+    ],
+    "prompt": "Act as an innovation facilitator. Generate 10 AI-enabled improvement ideas for this business challenge. For each, show benefit, effort, risk, and first experiment. Challenge: [describe].",
+    "challenge": "Propose one AI-enabled improvement idea and define a small experiment.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Treat AI ideas as starting points. Validate feasibility, cost, customer impact, and risk.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 12, "year": 1, "month": 12, "kicker": "SHOWCASE & SCALE", "workshop": true,
+    "title": "Celebrate progress and scale impact",
+    "subtitle": "Workshop month: share success stories, measure impact, and choose the next AI priorities.",
+    "benefit": "AI readiness becomes sustainable when value is measured and successful practices are scaled.",
+    "why": [
+      "Showcase department wins and lessons learned.",
+      "Measure adoption, confidence, time saved, and quality gains.",
+      "Agree the Year 2 roadmap for deeper AI adoption."
+    ],
+    "prompt": "Help me write a concise AI success story using this structure: problem, AI support, human review, result, lesson learned, next step. Notes: [paste content].",
+    "challenge": "Submit one AI success story or lesson learned from your team.",
+    "card04Title": "Hands-on session",
+    "card04Text": "Year-end showcase — present your AI win and shape the Year 2 roadmap.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 13, "year": 2, "month": 1, "kicker": "YEAR 2 KICKOFF", "workshop": false,
+    "title": "From skill to system",
+    "subtitle": "Set Year 2 priorities and move from individual AI skills to team workflows.",
+    "benefit": "Year 2 turns personal practice into shared department systems.",
+    "why": [
+      "Review Year 1 wins and gaps per team.",
+      "Set 2–3 measurable AI goals per department.",
+      "Identify the one workflow each team will rebuild around AI."
+    ],
+    "prompt": "Act as our AI program lead. Help me draft 3 Year-2 AI goals for [department] that are specific, measurable, and tied to a business outcome. Constraints: [resources, timeline].",
+    "challenge": "Submit your department's three Year 2 AI goals using the goal template.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Goals should improve work, not pressure colleagues into unsafe AI use. Keep human review in every workflow.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 14, "year": 2, "month": 2, "kicker": "FINANCE & ANALYSIS", "workshop": false,
+    "title": "AI for finance and reporting",
+    "subtitle": "Use AI to speed up variance commentary, draft reports, and explore \"what if\" scenarios.",
+    "benefit": "AI helps finance teams move from data wrangling to insight and decision support.",
+    "why": [
+      "Draft variance and management commentary from raw numbers.",
+      "Build \"what if\" scenarios for budgets and forecasts.",
+      "Generate clear narratives for non-finance leaders."
+    ],
+    "prompt": "Act as a finance business partner. Read the numbers below and write a one-page management commentary covering trends, drivers, risks, and recommended actions. Data: [paste].",
+    "challenge": "Take one routine finance report and AI-draft the commentary, then refine it.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Never paste customer, vendor, or restricted financial data into a non-approved AI tool. Use anonymised or aggregated inputs.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 15, "year": 2, "month": 3, "kicker": "HR & PEOPLE", "workshop": true,
+    "title": "AI for HR — from JDs to onboarding",
+    "subtitle": "Workshop month: hands-on HR use cases — job descriptions, interview questions, policy Q&A, onboarding kits.",
+    "benefit": "HR can move faster while keeping every touchpoint fair, clear, and human.",
+    "why": [
+      "Draft inclusive, accurate job descriptions in minutes.",
+      "Generate competency-based interview questions and scoring guides.",
+      "Build onboarding plans and policy explainers employees actually read."
+    ],
+    "prompt": "Act as a Goldbell HR partner. Draft a job description for [role] including purpose, key outcomes, must-have skills, nice-to-haves, and an inclusive language check. Context: [details].",
+    "challenge": "Rebuild one job description or onboarding doc with AI and ask a peer for honest feedback.",
+    "card04Title": "Hands-on session",
+    "card04Text": "HR cohort workshop — bring a real (anonymised) HR task and rebuild it with AI.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 16, "year": 2, "month": 4, "kicker": "SALES ENABLEMENT", "workshop": false,
+    "title": "AI for sales — outreach to objections",
+    "subtitle": "Help sales teams research accounts, personalise outreach, and rehearse difficult conversations.",
+    "benefit": "AI helps salespeople spend more time talking to customers and less time staring at blank screens.",
+    "why": [
+      "Research accounts and contacts faster from public information.",
+      "Personalise outreach without sounding generic.",
+      "Rehearse pricing, scope, and objection conversations before they happen."
+    ],
+    "prompt": "Act as my sales coach. Given this account profile, draft a personalised outreach email and three follow-up touchpoints. Then list five objections likely to come up and how I should respond. Account: [paste].",
+    "challenge": "Pick one stalled opportunity. Have AI generate a refreshed approach and try it this week.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Outputs are drafts, not commitments. Always check price, scope, and policy details before sending.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 17, "year": 2, "month": 5, "kicker": "CUSTOMER SERVICE", "workshop": false,
+    "title": "AI for service — clearer, faster, kinder",
+    "subtitle": "Build response templates, sentiment triage, and escalation drafts for service teams.",
+    "benefit": "Service teams respond faster while keeping every message warm and on-brand.",
+    "why": [
+      "Draft macros and reply templates for common issues.",
+      "Detect tone and prioritise upset or urgent customers.",
+      "Draft escalation summaries with context, options, and recommendations."
+    ],
+    "prompt": "Act as a senior customer-service lead. Read this customer message and draft a reply that acknowledges, explains, offers a next step, and ends warmly. Then assess sentiment and urgency. Message: [paste].",
+    "challenge": "Take one tough customer message this week and use AI to draft the first response — then a human edits.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Never share account details, IDs, or personal information with AI. Use placeholders and edit in the final reply.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 18, "year": 2, "month": 6, "kicker": "OPERATIONS & SOPs", "workshop": true,
+    "title": "AI for operations — playbooks and incidents",
+    "subtitle": "Workshop month: rebuild SOPs, incident reports, and supplier communications with AI support.",
+    "benefit": "Operations becomes more consistent when knowledge stops living in people's heads.",
+    "why": [
+      "Convert tribal knowledge into clear SOPs and checklists.",
+      "Draft incident reports and root-cause notes quickly.",
+      "Generate supplier and partner communications consistently."
+    ],
+    "prompt": "Act as an ops continuous-improvement lead. Given these notes from a recent incident, draft an incident report with: summary, timeline, root cause hypothesis, immediate fix, and prevention actions. Notes: [paste].",
+    "challenge": "Pick one informal process. Rebuild it as a clear AI-assisted SOP and circulate for feedback.",
+    "card04Title": "Hands-on session",
+    "card04Text": "Operations cohort — bring one SOP or incident note to rebuild together.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 19, "year": 2, "month": 7, "kicker": "PROCUREMENT & SUPPLY", "workshop": false,
+    "title": "AI for procurement and supply",
+    "subtitle": "Use AI to compare quotes, summarise contracts, and prepare supplier conversations.",
+    "benefit": "AI speeds up procurement analysis so teams can negotiate from a stronger position.",
+    "why": [
+      "Compare quotes and vendor proposals side by side.",
+      "Summarise long contracts and flag unusual clauses.",
+      "Prepare structured supplier review and negotiation notes."
+    ],
+    "prompt": "Act as a senior procurement analyst. Compare these three vendor proposals side by side on price, scope, terms, risks, and recommended next questions. Proposals: [paste].",
+    "challenge": "Use AI to summarise one supplier contract and prepare three questions for your next review.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Contract terms must be confirmed by Legal or Finance. AI summaries are a starting point, not the source of truth.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 20, "year": 2, "month": 8, "kicker": "LEADERSHIP", "workshop": false,
+    "title": "AI for leaders — decisions and memos",
+    "subtitle": "Practical AI uses for managers and leaders: decision memos, board updates, town hall scripts.",
+    "benefit": "Leaders get more thinking time when AI handles the heavy drafting work.",
+    "why": [
+      "Draft decision memos with options, trade-offs, and recommendations.",
+      "Generate board and exco updates from raw notes.",
+      "Prepare town hall and team communications in different tones."
+    ],
+    "prompt": "Act as my chief of staff. Turn these meeting notes into a one-page decision memo with context, options, trade-offs, recommendation, and risks. Notes: [paste].",
+    "challenge": "Take one upcoming decision and draft the memo with AI. Bring it to your next 1:1 for review.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Strategic and people-sensitive content should never go through public AI tools. Use approved internal tools only.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 21, "year": 2, "month": 9, "kicker": "MARKETING & CONTENT", "workshop": true,
+    "title": "AI for marketing — briefs to campaigns",
+    "subtitle": "Workshop month: campaign briefs, content variants, social posts, landing-page drafts.",
+    "benefit": "Marketing teams can produce more variants and test ideas without burning out.",
+    "why": [
+      "Generate campaign briefs and creative concepts faster.",
+      "Produce on-brand content variants for different channels.",
+      "Test landing-page and email copy options before launch."
+    ],
+    "prompt": "Act as our brand-trained marketing strategist. Draft a campaign brief for [product] that includes objective, audience, key message, three creative concepts, channels, and measurement. Context: [paste].",
+    "challenge": "Pick one campaign and AI-generate three concept directions. Choose one to develop with your team.",
+    "card04Title": "Hands-on session",
+    "card04Text": "Marketing cohort — bring a real brief and run it through AI for fresh angles.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 22, "year": 2, "month": 10, "kicker": "VOICE & MEETINGS", "workshop": false,
+    "title": "AI for meetings — transcribe, summarise, act",
+    "subtitle": "Use AI tools to capture meetings, summarise outcomes, and assign next actions automatically.",
+    "benefit": "Meetings become more useful when notes, decisions, and actions are captured by default.",
+    "why": [
+      "Transcribe meetings accurately and securely.",
+      "Auto-summarise decisions, actions, owners, and dates.",
+      "Convert long calls into one-page briefings."
+    ],
+    "prompt": "Act as my executive assistant. From this meeting transcript, produce a one-page summary with: context, decisions, action items with owners and dates, open questions, and follow-up suggestions. Transcript: [paste].",
+    "challenge": "Use AI to summarise one internal meeting this week and share the action list with attendees.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Only record meetings when participants are informed and consent. Avoid external or client meetings unless permitted by policy.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 23, "year": 2, "month": 11, "kicker": "AI + YOUR TOOLS", "workshop": false,
+    "title": "Connect AI to the tools you already use",
+    "subtitle": "Bring AI into email, Teams, SharePoint, and everyday productivity tools.",
+    "benefit": "AI delivers value where work happens, not in a separate browser tab.",
+    "why": [
+      "Use Copilot or equivalent AI features inside Outlook, Word, Excel, Teams.",
+      "Connect AI to internal knowledge stores safely.",
+      "Replace some manual lookups with AI-assisted search."
+    ],
+    "prompt": "Act as a Microsoft 365 productivity coach. For [my role], suggest 10 ways to use Copilot inside Outlook, Word, Excel, Teams, and PowerPoint, ranked by impact and ease. Constraints: [policy notes].",
+    "challenge": "Pick one tool you already use and try one AI feature inside it this week.",
+    "card04Title": "Safety reminder",
+    "card04Text": "In integrated AI tools, your data may be processed by the vendor. Confirm what is and isn't permitted under Goldbell IT policy.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 24, "year": 2, "month": 12, "kicker": "YEAR 2 SHOWCASE", "workshop": true,
+    "title": "Department playbooks and the road ahead",
+    "subtitle": "Workshop month: each department shares its AI playbook and Year 3 priorities.",
+    "benefit": "Year 2 ends with shared playbooks that anyone in a role can adopt on day one.",
+    "why": [
+      "Document each team's standard AI workflows.",
+      "Compare adoption, time saved, and quality gains across teams.",
+      "Choose where to scale, automate, or pause."
+    ],
+    "prompt": "Help me draft my department's AI playbook. Include: roles, top 5 workflows, prompts used, success measures, risks, and what we still need help with. Notes: [paste].",
+    "challenge": "Submit your department's Year 2 AI playbook draft for the showcase.",
+    "card04Title": "Hands-on session",
+    "card04Text": "Year 2 showcase — present your playbook and vote on Year 3 priorities.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 25, "year": 3, "month": 1, "kicker": "YEAR 3 KICKOFF", "workshop": false,
+    "title": "From systems to scale",
+    "subtitle": "Year 3 moves from team workflows to automated, governed, measurable AI at Goldbell.",
+    "benefit": "AI shifts from \"extra effort\" to \"default way we work\" when it is automated and measured.",
+    "why": [
+      "Identify workflows ready for automation and agents.",
+      "Set group-level metrics for AI value and risk.",
+      "Plan the move from copy-paste prompts to integrated tools."
+    ],
+    "prompt": "Act as our AI strategy lead. Given Year 1–2 wins and gaps, draft three Year-3 priorities for Goldbell with rationale, owner, target outcome, and a 90-day kickoff plan. Inputs: [paste].",
+    "challenge": "Submit your department's top automation candidate workflow.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Automation amplifies mistakes. Every automated workflow needs an owner, a human review point, and a fallback.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 26, "year": 3, "month": 2, "kicker": "CUSTOM GPTs & COPILOTS", "workshop": false,
+    "title": "Build a custom AI assistant for your team",
+    "subtitle": "Create low-code custom GPTs, Copilots, or assistants tuned to your team's tasks and knowledge.",
+    "benefit": "Custom assistants are faster than prompts because the context is built in.",
+    "why": [
+      "Identify a high-frequency, well-defined task to wrap into a custom assistant.",
+      "Pre-load context, examples, and guardrails.",
+      "Roll out, gather feedback, and improve weekly."
+    ],
+    "prompt": "Act as a custom GPT designer. For this task, propose the assistant's role, system prompt, sample inputs, guardrails, allowed and forbidden behaviours, and three test scenarios. Task: [describe].",
+    "challenge": "Spec one custom assistant for your team and build a first version this month.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Custom assistants must follow Goldbell data-handling rules. Get IT and Legal review before any production rollout.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 27, "year": 3, "month": 3, "kicker": "WORKFLOW AUTOMATION", "workshop": true,
+    "title": "AI + automation — trigger to outcome",
+    "subtitle": "Workshop month: build end-to-end flows with AI triggers (Power Automate, n8n, Make, Zapier).",
+    "benefit": "AI plus automation moves work from your inbox to a system that just runs.",
+    "why": [
+      "Map a real workflow with manual and AI steps.",
+      "Add triggers, AI generation, human review, and notifications.",
+      "Measure before/after time, error rate, and exception cases."
+    ],
+    "prompt": "Act as an automation architect. Design an end-to-end flow for [workflow]: triggers, AI steps, human review, success paths, error paths, and metrics. Constraints: [tools available].",
+    "challenge": "Pick one workflow and prototype it with AI + your team's automation tool.",
+    "card04Title": "Hands-on session",
+    "card04Text": "Automation lab — build one working flow during the workshop with mentor support.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 28, "year": 3, "month": 4, "kicker": "DOCUMENT INTELLIGENCE", "workshop": false,
+    "title": "Extract structure from PDFs, Excel, and email",
+    "subtitle": "Use AI to extract key data, fields, and tables from unstructured documents.",
+    "benefit": "Tasks that used to take hours of copy-paste become a structured table in minutes.",
+    "why": [
+      "Extract fields and tables from invoices, contracts, claims, or forms.",
+      "Route extracted data into spreadsheets or systems automatically.",
+      "Catch missing or inconsistent values before they cause issues downstream."
+    ],
+    "prompt": "Act as a document intelligence specialist. Extract the following fields from this document into a clean table: [list fields]. Flag any missing, ambiguous, or unusual values. Document: [paste or attach].",
+    "challenge": "Pick one document type your team handles repeatedly. Use AI to extract its fields and review accuracy.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Confidential or regulated documents need approved tooling and storage. Confirm with IT before processing at scale.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 29, "year": 3, "month": 5, "kicker": "CODE & QUERIES FOR NON-DEVS", "workshop": false,
+    "title": "AI for spreadsheets, SQL, and light code",
+    "subtitle": "Use AI to write formulas, SQL queries, and small scripts even if you are not a developer.",
+    "benefit": "Non-technical teams can self-serve data questions they used to wait days for.",
+    "why": [
+      "Get help writing Excel and Google Sheets formulas.",
+      "Generate safe, read-only SQL queries with explanations.",
+      "Build small scripts to clean files or automate repetitive tasks."
+    ],
+    "prompt": "Act as a friendly data engineer. Write a SQL query to answer this question against this schema, explain what each part does, and warn me about anything that could go wrong. Question and schema: [paste].",
+    "challenge": "Pick one repetitive data task and have AI help you script or formula your way out of it.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Always run AI-generated SQL as read-only first. Never run code or queries on production data without review.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 30, "year": 3, "month": 6, "kicker": "MEASURING IMPACT", "workshop": true,
+    "title": "Prove the value — time, quality, ROI",
+    "subtitle": "Workshop month: define and track AI impact across time saved, quality, and outcomes.",
+    "benefit": "Measured AI value earns more investment and trust from leadership.",
+    "why": [
+      "Define meaningful AI impact metrics per workflow.",
+      "Capture before-and-after data simply and honestly.",
+      "Tell the story of AI value to leaders and peers."
+    ],
+    "prompt": "Act as a measurement coach. For this AI workflow, propose 3 impact metrics, how to baseline, how to track, and how to present the result on one page. Workflow: [describe].",
+    "challenge": "Submit a one-page impact story for one AI workflow your team uses.",
+    "card04Title": "Hands-on session",
+    "card04Text": "Impact lab — bring a workflow and build its measurement plan together.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 31, "year": 3, "month": 7, "kicker": "RISK & GOVERNANCE", "workshop": false,
+    "title": "Responsible AI at scale — risk and audit",
+    "subtitle": "Strengthen AI governance: risk, audit, vendor due diligence, and incident handling.",
+    "benefit": "A clear governance model lets people use AI fast without taking unsafe shortcuts.",
+    "why": [
+      "Maintain an AI use-case register with risk levels.",
+      "Run vendor and tool due diligence consistently.",
+      "Define how to handle AI errors, near misses, and incidents."
+    ],
+    "prompt": "Act as our AI risk officer. Assess this AI use case for data, accuracy, compliance, vendor, and human-oversight risks. Recommend mitigations and a review cadence. Use case: [describe].",
+    "challenge": "Add one of your team's AI workflows to the AI use-case register, with risks and mitigations.",
+    "card04Title": "Safety reminder",
+    "card04Text": "For MAS, PDPA, and customer-facing AI, never skip review. When in doubt, escalate before deploying.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 32, "year": 3, "month": 8, "kicker": "AI CHAMPIONS PROGRAM", "workshop": false,
+    "title": "Build the internal AI community",
+    "subtitle": "Launch and sustain an AI champions program: people, rituals, recognition, knowledge base.",
+    "benefit": "AI scales when people support each other, not just when IT delivers tools.",
+    "why": [
+      "Identify AI champions in every team.",
+      "Run monthly clinics, demos, and prompt swaps.",
+      "Recognise and reward responsible AI wins."
+    ],
+    "prompt": "Act as our AI program designer. Draft the operating model for our AI champions program: roles, rituals, communication, training, recognition, and success measures.",
+    "challenge": "Nominate or volunteer one AI champion from your team and join the next monthly clinic.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Champions support adoption, not replace governance. Risk decisions still go through the right channels.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 33, "year": 3, "month": 9, "kicker": "CUSTOMER-FACING AI", "workshop": true,
+    "title": "AI that customers actually see",
+    "subtitle": "Workshop month: customer-facing AI — chatbots, smart search, AI in apps and the customer portal.",
+    "benefit": "Done right, customer-facing AI improves service and brand. Done wrong, it damages both.",
+    "why": [
+      "Pick the right customer journeys for AI to assist.",
+      "Design tone, fallback, and escalation to a human.",
+      "Measure satisfaction, deflection, and incident rates."
+    ],
+    "prompt": "Act as a customer-experience designer. Map this customer journey, suggest where AI assists and where humans must own the moment, and define metrics and risks. Journey: [describe].",
+    "challenge": "Pick one customer touchpoint and design a small AI assist with clear human fallback.",
+    "card04Title": "Hands-on session",
+    "card04Text": "Customer-facing AI lab — design and pressure-test one use case with peer review.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  },
+  {
+    "issue": 34, "year": 3, "month": 10, "kicker": "BUILD VS BUY", "workshop": false,
+    "title": "Build, buy, or partner — choosing the right path",
+    "subtitle": "Decision frameworks for build-vs-buy across AI tools, platforms, and custom solutions.",
+    "benefit": "Smart build-vs-buy decisions avoid wasted spend and tech debt.",
+    "why": [
+      "Score AI options on fit, cost, risk, and time-to-value.",
+      "Avoid duplicating what existing platforms already provide.",
+      "Decide when custom work is worth the long-term cost."
+    ],
+    "prompt": "Act as our build-vs-buy advisor. For this AI need, compare three approaches (off-the-shelf, configure existing platform, custom build) on fit, cost, risk, time-to-value, and lock-in. Need: [describe].",
+    "challenge": "Pick one AI need your team has and run it through the build-vs-buy framework with leadership.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Vendor choices have long tails — data, exit, and dependency risks. Loop in IT, Legal, and Finance early.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 35, "year": 3, "month": 11, "kicker": "STRATEGY & ROADMAP", "workshop": false,
+    "title": "From projects to portfolio — AI strategy",
+    "subtitle": "Align the AI roadmap with business strategy, prioritise across the group, and plan investment.",
+    "benefit": "AI strategy stops being a list of pilots and becomes part of the business plan.",
+    "why": [
+      "Map AI initiatives to business goals across Goldbell.",
+      "Prioritise across value, feasibility, and risk.",
+      "Allocate budget, talent, and capacity intentionally."
+    ],
+    "prompt": "Act as our AI strategy advisor. Given these business goals and current AI initiatives, propose a 12-month AI portfolio plan with priorities, sequencing, owners, and success metrics. Inputs: [paste].",
+    "challenge": "Submit a one-page department AI roadmap that ties to Goldbell business goals.",
+    "card04Title": "Safety reminder",
+    "card04Text": "Strategic plans live in approved tools only. Keep sensitive priorities out of public AI services.",
+    "card04Cta": "→ REVIEW BEFORE USE"
+  },
+  {
+    "issue": 36, "year": 3, "month": 12, "kicker": "3-YEAR REVIEW", "workshop": true,
+    "title": "Three years on — impact and what's next",
+    "subtitle": "Workshop month: review the three-year journey, celebrate impact, and shape what comes next.",
+    "benefit": "A clear 3-year story builds permission and energy for the next chapter of AI at Goldbell.",
+    "why": [
+      "Showcase department impact across the 3-year program.",
+      "Recognise champions, teams, and standout use cases.",
+      "Decide where AI investment goes next, with confidence."
+    ],
+    "prompt": "Help me write a 3-year AI impact story for Goldbell: what we started with, what changed, the wins, the lessons, the people, and where we are heading next. Inputs: [paste highlights].",
+    "challenge": "Bring your team's 3-year highlight reel or one-pager to the showcase.",
+    "card04Title": "Hands-on session",
+    "card04Text": "3-year review & awards — present, vote, and shape the next program.",
+    "card04Cta": "→ JOIN WORKSHOP"
+  }
+]
