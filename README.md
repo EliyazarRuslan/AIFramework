@@ -261,3 +261,33 @@ material; verify usage rights before any external redistribution.
   state but has no backend wired in yet.
 - **Web Vitals collection:** `src/js/web-vitals.js` collects metrics but
   has no remote sink configured.
+
+## Microsoft SSO + per-user chat history
+
+The app gates `/api/*` behind Microsoft Entra ID (Azure AD) SSO and stores every chat
+turn in an MSSQL `AIFramework` database, keyed by the user's Entra `oid`. Each user
+only ever sees their own conversations.
+
+### One-time setup
+
+1. **Register the app in Entra** (Azure portal → App registrations → New registration):
+   - Supported account types: _Accounts in this organizational directory only_ (Goldbell, single-tenant).
+   - Redirect URI: `http://localhost:5173` (add prod URL later).
+   - Under **Expose an API** → set Application ID URI (default `api://<clientId>`)
+     → add scope `access_as_user` → grant admin consent.
+   - Copy the **Tenant ID** and **Client ID** into `.env`.
+
+2. **Create the database** on `GBITR01V.goldbell.com.sg`:
+
+   ```bash
+   sqlcmd -S GBITR01V.goldbell.com.sg -U ReadUser -P 'your-pass' -i server/sql/001_init.sql
+   ```
+
+3. **Fill `.env`** from `.env.example` (Entra IDs + MSSQL creds).
+
+4. **Run**: `npm run dev:full` — the web client and API server come up together.
+   First request will redirect to Microsoft for login.
+
+### Dev bypass
+
+Set `AUTH_DISABLED=true` in `.env` to skip SSO locally. Never in production.

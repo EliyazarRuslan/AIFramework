@@ -12,6 +12,8 @@ const fs = require("node:fs");
 const pdfParse = require("pdf-parse");
 const mammoth = require("mammoth");
 const xlsx = require("xlsx");
+const { requireAuth } = require("./auth.js");
+const chatRepo = require("./repos/chat.js");
 
 const PORT = Number(process.env.PORT || 5173);
 const DIST_DIR = path.join(__dirname, "..", "dist");
@@ -42,23 +44,129 @@ const RATE_LIMIT = 30; // requests
 const RATE_WINDOW_MS = 60_000; // per minute
 
 function rateLimit(req, res, next) {
-  const ip = req.ip || "unknown";
+  // Prefer authenticated user identity; fall back to IP for unauthenticated paths.
+  const key = req.user?.oid ? `u:${req.user.oid}` : `ip:${req.ip || "unknown"}`;
   const now = Date.now();
-  const bucket = rateBuckets.get(ip) || { count: 0, resetAt: now + RATE_WINDOW_MS };
+  const bucket = rateBuckets.get(key) || { count: 0, resetAt: now + RATE_WINDOW_MS };
   if (now > bucket.resetAt) {
     bucket.count = 0;
     bucket.resetAt = now + RATE_WINDOW_MS;
   }
   bucket.count += 1;
-  rateBuckets.set(ip, bucket);
+  rateBuckets.set(key, bucket);
   if (bucket.count > RATE_LIMIT) {
     return res.status(429).json({ error: "Rate limit exceeded. Try again in a minute." });
   }
   next();
 }
 
+// Fatal guard: never let AUTH_DISABLED ship in production.
+if (process.env.NODE_ENV === "production" && process.env.AUTH_DISABLED === "true") {
+  console.error("[FATAL] AUTH_DISABLED=true in NODE_ENV=production. Refusing to start.");
+  process.exit(1);
+}
+
 app.get("/api/health", (_req, res) => {
-  res.json({ ok: true, model: OPENAI_MODEL, keyConfigured: Boolean(OPENAI_KEY) });
+  res.json({ ok: true });
+});
+
+// /api/config — public endpoint so frontend can fetch Entra settings without auth.
+// Only non-sensitive identifiers exposed. authDisabled intentionally omitted; the
+// frontend always attempts the full SSO flow and the backend silently grants dev
+// access when the env var is set.
+app.get("/api/config", (_req, res) => {
+  const cfg = {
+    tenantId: process.env.ENTRA_TENANT_ID || "",
+    clientId: process.env.ENTRA_CLIENT_ID || "",
+    // Pinned redirect URI removes any window.location.origin trust in the SPA.
+    redirectUri: process.env.ENTRA_REDIRECT_URI || "",
+  };
+  if (process.env.AUTH_DISABLED === "true" && process.env.NODE_ENV !== "production") {
+    cfg.authDisabled = true;
+  }
+  res.json(cfg);
+});
+
+// All /api/* below this line require a valid Entra Bearer token.
+app.use("/api", (req, res, next) => {
+  if (req.path === "/health" || req.path === "/config") return next();
+  return requireAuth(req, res, next);
+});
+
+// ---- Chat session history ---------------------------------------------------
+
+app.get("/api/sessions", rateLimit, async (req, res) => {
+  try {
+    const list = await chatRepo.listSessions(req.user.oid);
+    res.json({ sessions: list });
+  } catch (err) {
+    console.error("[/api/sessions GET]", err);
+    res.status(500).json({ error: err.message || "Failed to list sessions." });
+  }
+});
+
+app.post("/api/sessions", rateLimit, async (req, res) => {
+  try {
+    const { title, systemPrompt } = req.body || {};
+    const s = await chatRepo.createSession({
+      userOid: req.user.oid,
+      title: typeof title === "string" ? title.slice(0, 200) : undefined,
+      systemPrompt: typeof systemPrompt === "string" ? systemPrompt.slice(0, 16000) : undefined,
+    });
+    res.json({ session: s });
+  } catch (err) {
+    console.error("[/api/sessions POST]", err);
+    res.status(500).json({ error: err.message || "Failed to create session." });
+  }
+});
+
+app.get("/api/sessions/:id/messages", rateLimit, async (req, res) => {
+  try {
+    const session = await chatRepo.getSession({
+      sessionId: req.params.id,
+      userOid: req.user.oid,
+    });
+    if (!session) return res.status(404).json({ error: "Session not found." });
+    const messages = await chatRepo.getMessages({
+      sessionId: req.params.id,
+      userOid: req.user.oid,
+    });
+    res.json({ session, messages });
+  } catch (err) {
+    console.error("[/api/sessions/:id/messages GET]", err);
+    res.status(500).json({ error: err.message || "Failed to load messages." });
+  }
+});
+
+app.patch("/api/sessions/:id", rateLimit, async (req, res) => {
+  try {
+    const { title } = req.body || {};
+    if (typeof title !== "string" || !title.trim()) {
+      return res.status(400).json({ error: "Field 'title' required." });
+    }
+    await chatRepo.renameSession({
+      sessionId: req.params.id,
+      userOid: req.user.oid,
+      title: title.slice(0, 200),
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("[/api/sessions/:id PATCH]", err);
+    res.status(500).json({ error: err.message || "Failed to rename session." });
+  }
+});
+
+app.delete("/api/sessions/:id", rateLimit, async (req, res) => {
+  try {
+    await chatRepo.deleteSession({
+      sessionId: req.params.id,
+      userOid: req.user.oid,
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("[/api/sessions/:id DELETE]", err);
+    res.status(500).json({ error: err.message || "Failed to delete session." });
+  }
 });
 
 app.post("/api/refine", rateLimit, async (req, res) => {
@@ -145,12 +253,15 @@ app.post("/api/chat", rateLimit, async (req, res) => {
   if (!OPENAI_KEY) {
     return res.status(500).json({ error: "Server missing OPENAI_API_KEY." });
   }
-  const { systemPrompt, messages } = req.body || {};
+  const { systemPrompt, messages, sessionId } = req.body || {};
   if (typeof systemPrompt !== "string" || !systemPrompt.trim()) {
     return res.status(400).json({ error: "Field 'systemPrompt' (string) required." });
   }
   if (!Array.isArray(messages) || messages.length === 0) {
     return res.status(400).json({ error: "Field 'messages' (array) required." });
+  }
+  if (sessionId && typeof sessionId !== "string") {
+    return res.status(400).json({ error: "'sessionId' must be string." });
   }
   if (systemPrompt.length > 16000) {
     return res.status(400).json({ error: "'systemPrompt' too long (max 16000 chars)." });
@@ -186,14 +297,65 @@ app.post("/api/chat", rateLimit, async (req, res) => {
     }
   }
 
+  // Resolve session: either provided (and owned) or create a new one.
+  let activeSession;
+  try {
+    if (sessionId) {
+      activeSession = await chatRepo.getSession({ sessionId, userOid: req.user.oid });
+      if (!activeSession) {
+        return res.status(404).json({ error: "Session not found or not owned by user." });
+      }
+    } else {
+      const lastUser = cleaned[cleaned.length - 1];
+      const title = (() => {
+        if (typeof lastUser.content === "string") return lastUser.content.slice(0, 60);
+        if (Array.isArray(lastUser.content)) {
+          const t = lastUser.content.find((p) => p.type === "text");
+          return (t?.text || "New chat").slice(0, 60);
+        }
+        return "New chat";
+      })();
+      activeSession = await chatRepo.createSession({
+        userOid: req.user.oid,
+        title,
+        systemPrompt,
+      });
+    }
+  } catch (err) {
+    console.error("[/api/chat session]", err);
+    return res.status(500).json({ error: err.message || "Failed to resolve session." });
+  }
+
+  // Persist the latest user message before streaming the assistant reply.
+  try {
+    const last = cleaned[cleaned.length - 1];
+    const userText =
+      typeof last.content === "string"
+        ? last.content
+        : last.content.find((p) => p.type === "text")?.text || "";
+    await chatRepo.addMessage({
+      sessionId: activeSession.sessionId,
+      userOid: req.user.oid,
+      role: "user",
+      content: userText,
+    });
+  } catch (err) {
+    console.error("[/api/chat persist user]", err);
+    return res.status(500).json({ error: err.message || "Failed to persist message." });
+  }
+
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache, no-transform");
   res.setHeader("Connection", "keep-alive");
   res.setHeader("X-Accel-Buffering", "no");
   res.flushHeaders?.();
 
+  // Emit the resolved sessionId first so the client can attach to history.
+  res.write(`data: ${JSON.stringify({ sessionId: activeSession.sessionId })}\n\n`);
+
   const send = (obj) => res.write(`data: ${JSON.stringify(obj)}\n\n`);
   const sendDone = () => res.write(`data: [DONE]\n\n`);
+  let assistantBuf = "";
 
   const controller = new AbortController();
   res.on("close", () => {
@@ -245,16 +407,45 @@ app.post("/api/chat", rateLimit, async (req, res) => {
         try {
           const json = JSON.parse(payload);
           const delta = json?.choices?.[0]?.delta?.content;
-          if (delta) send({ token: delta });
+          if (delta) {
+            assistantBuf += delta;
+            send({ token: delta });
+          }
         } catch {
           // ignore malformed chunk
         }
       }
     }
+    if (assistantBuf) {
+      try {
+        await chatRepo.addMessage({
+          sessionId: activeSession.sessionId,
+          userOid: req.user.oid,
+          role: "assistant",
+          content: assistantBuf,
+        });
+      } catch (persistErr) {
+        console.error("[/api/chat persist assistant]", persistErr);
+      }
+    }
     sendDone();
     res.end();
   } catch (err) {
-    if (err.name === "AbortError") return res.end();
+    if (err.name === "AbortError") {
+      if (assistantBuf) {
+        try {
+          await chatRepo.addMessage({
+            sessionId: activeSession.sessionId,
+            userOid: req.user.oid,
+            role: "assistant",
+            content: assistantBuf + "\n[stream aborted]",
+          });
+        } catch {
+          // best-effort persist on abort; ignore secondary failures.
+        }
+      }
+      return res.end();
+    }
     console.error("[/api/chat]", err);
     send({ error: err.message || "Server error." });
     sendDone();

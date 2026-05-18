@@ -40,9 +40,14 @@
       rel="stylesheet"
     />
 
+    <!-- ── Auth: Microsoft Entra SSO. Must load before any /api/* fetch. ── -->
+    <script type="module">
+      import { initAuth } from "/src/js/auth.js";
+      initAuth().catch((e) => console.error("[auth] init failed:", e));
+    </script>
+
     <!-- ── Site extras: PWA + Web Vitals + reduced-motion guard. Deferred. ── -->
     <script type="module" src="/src/js/site-extras.js"></script>
-    <script type="module" src="/src/js/roadmap.js"></script>
   </head>
   <body>
     <!-- ── Skip to content (a11y) ── -->
@@ -151,7 +156,6 @@
           <ul class="nav-links" role="list">
             <li><a href="#why-ai">Why AI?</a></li>
             <li><a href="#newsletter">This Month</a></li>
-            <li><a href="#roadmap">Roadmap</a></li>
             <li><a href="#learning-path">Learn</a></li>
             <li class="nav-group" data-nav-group>
               <button
@@ -278,7 +282,6 @@
       </div>
       <a href="#why-ai" class="mobile-link">Why AI?</a>
       <a href="#newsletter" class="mobile-link">This Month</a>
-      <a href="#roadmap" class="mobile-link">Roadmap</a>
       <a href="#learning-path" class="mobile-link">Learn</a>
       <a href="#task-decision-helper" class="mobile-link">Start</a>
       <a href="#beginner-glossary" class="mobile-link">Glossary</a>
@@ -796,94 +799,6 @@
                 <span class="nl-card-caret">▼</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── 3-Year AI Roadmap ── -->
-      <section class="section" id="roadmap" aria-labelledby="roadmap-heading">
-        <div class="container">
-          <div class="section-header reveal">
-            <div class="section-label">🗺️ Strategic Plan</div>
-            <h2 class="section-title" id="roadmap-heading">3-Year AI Roadmap</h2>
-            <p class="section-subtitle">
-              Twelve monthly issues per year, three years end-to-end — from first ChatGPT prompt to
-              portfolio-level AI strategy. Pick a year to see the monthly themes.
-            </p>
-          </div>
-
-          <div class="roadmap-bg reveal">
-            <div class="roadmap-stats" aria-label="Roadmap snapshot">
-              <div class="roadmap-stat">
-                <div class="roadmap-stat-num">12</div>
-                <div class="roadmap-stat-label">Year 1 monthly issues</div>
-              </div>
-              <div class="roadmap-stat">
-                <div class="roadmap-stat-num">6</div>
-                <div class="roadmap-stat-label">Strategic pillars (Y2 + Y3)</div>
-              </div>
-              <div class="roadmap-stat">
-                <div class="roadmap-stat-num">3</div>
-                <div class="roadmap-stat-label">Hands-on Year 1 workshops</div>
-              </div>
-              <div class="roadmap-stat">
-                <div class="roadmap-stat-num">100%</div>
-                <div class="roadmap-stat-label">Policy-aligned</div>
-              </div>
-            </div>
-
-            <div
-              class="roadmap-tabs"
-              role="tablist"
-              aria-label="Choose roadmap year"
-              id="roadmap-tabs"
-            >
-              <button
-                class="roadmap-tab is-active"
-                type="button"
-                role="tab"
-                data-roadmap-year="1"
-                aria-selected="true"
-                aria-controls="roadmap-panel"
-              >
-                <span class="roadmap-tab-year">Year 1 · Monthly</span>
-                <span class="roadmap-tab-theme">Foundations &amp; Productivity</span>
-              </button>
-              <button
-                class="roadmap-tab"
-                type="button"
-                role="tab"
-                data-roadmap-year="2"
-                aria-selected="false"
-                tabindex="-1"
-                aria-controls="roadmap-panel"
-              >
-                <span class="roadmap-tab-year">Year 2 · Overview</span>
-                <span class="roadmap-tab-theme">Department Playbooks</span>
-              </button>
-              <button
-                class="roadmap-tab"
-                type="button"
-                role="tab"
-                data-roadmap-year="3"
-                aria-selected="false"
-                tabindex="-1"
-                aria-controls="roadmap-panel"
-              >
-                <span class="roadmap-tab-year">Year 3 · Overview</span>
-                <span class="roadmap-tab-theme">Scale, Governance &amp; ROI</span>
-              </button>
-            </div>
-
-            <div class="roadmap-panel" id="roadmap-panel" role="tabpanel" aria-live="polite">
-              <!-- Month cards injected by JS -->
-            </div>
-
-            <p class="roadmap-footnote">
-              <span aria-hidden="true">🛡️</span>
-              Every issue ships with a safety reminder. Confidential, customer, and financial data
-              stay out of public AI tools until IT approves them for company use.
-            </p>
           </div>
         </div>
       </section>
@@ -1498,16 +1413,66 @@
                   how the model responds. History stays in your browser.
                 </p>
               </div>
-              <button
-                type="button"
-                class="btn btn-sm btn-secondary"
-                id="pe-tester-reset"
-                onclick="resetPromptTester()"
-              >
-                ♻️ Reset chat
-              </button>
+              <div style="display: flex; gap: 8px">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-secondary"
+                  id="pe-new-chat"
+                  onclick="startNewSession()"
+                  title="Start a new chat (history saved)"
+                >
+                  ＋ New chat
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-secondary"
+                  id="pe-tester-reset"
+                  onclick="resetPromptTester()"
+                >
+                  ♻️ Reset chat
+                </button>
+              </div>
             </header>
-            <div class="pe-chat-thread" id="pe-chat-thread" aria-live="polite" data-dropzone></div>
+            <div
+              class="pe-chat-layout"
+              style="
+                display: grid;
+                grid-template-columns: 220px 1fr;
+                gap: 12px;
+                align-items: stretch;
+              "
+            >
+              <aside
+                class="pe-chat-history"
+                style="
+                  background: rgba(255, 255, 255, 0.03);
+                  border: 1px solid rgba(255, 255, 255, 0.06);
+                  border-radius: 8px;
+                  padding: 8px;
+                  max-height: 480px;
+                  overflow-y: auto;
+                "
+              >
+                <div
+                  style="
+                    font-size: 11px;
+                    color: #8b949e;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    padding: 4px 6px 8px;
+                  "
+                >
+                  Your chats
+                </div>
+                <div id="pe-chat-sessions"></div>
+              </aside>
+              <div
+                class="pe-chat-thread"
+                id="pe-chat-thread"
+                aria-live="polite"
+                data-dropzone
+              ></div>
+            </div>
             <div class="pe-chat-attachments" id="pe-chat-attachments" hidden></div>
             <form class="pe-chat-form" id="pe-chat-form" onsubmit="return false;">
               <textarea
@@ -5699,12 +5664,14 @@
             }),
           });
           if (!response.ok) {
-            let detail = "";
+            // Read raw body once; Response.body is a one-shot stream.
+            const raw = await response.text();
+            let detail = raw;
             try {
-              const errJson = await response.json();
+              const errJson = JSON.parse(raw);
               detail = errJson?.error || JSON.stringify(errJson);
-            } catch (_) {
-              detail = await response.text();
+            } catch {
+              // raw already holds the text body
             }
             throw new Error("Refine " + response.status + ": " + (detail || "request failed"));
           }
@@ -5780,18 +5747,132 @@
         history: [],
         pending: [], // { id, name, size, mimeType, kind: image|doc, dataUrl?, text?, status }
         controller: null,
+        sessionId: null,
+        sessions: [],
       };
 
-      function loadPromptTesterHistory() {
+      // ─── Chat history sidebar (server-backed, per-user, SSO-gated). ───
+      async function refreshSessionList() {
         try {
-          const raw = localStorage.getItem(PE_CHAT.storageKey);
-          PE_CHAT.history = raw ? JSON.parse(raw) : [];
-        } catch (_) {
-          PE_CHAT.history = [];
+          const r = await fetch("/api/sessions");
+          if (!r.ok) return;
+          const j = await r.json();
+          PE_CHAT.sessions = j.sessions || [];
+          renderSessionList();
+        } catch (err) {
+          console.warn("[chat history] list failed:", err.message);
         }
       }
+
+      function renderSessionList() {
+        const el = document.getElementById("pe-chat-sessions");
+        if (!el) return;
+        // Replace contents via DOM construction (safe against XSS) instead of innerHTML.
+        while (el.firstChild) el.removeChild(el.firstChild);
+        if (PE_CHAT.sessions.length === 0) {
+          const empty = document.createElement("div");
+          empty.style.cssText = "padding:12px;color:#8b949e;font-size:12px";
+          empty.textContent = "No chat history yet.";
+          el.appendChild(empty);
+          return;
+        }
+        for (const s of PE_CHAT.sessions) {
+          const active = s.sessionId === PE_CHAT.sessionId;
+          const row = document.createElement("div");
+          row.className = "pe-session-item" + (active ? " active" : "");
+          row.dataset.sid = s.sessionId;
+          row.style.cssText =
+            "padding:8px 10px;border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:6px;" +
+            (active ? "background:rgba(47,129,247,.15)" : "");
+
+          const label = document.createElement("span");
+          label.style.cssText =
+            "flex:1;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap";
+          const titleText = String(s.title || "Untitled");
+          label.title = titleText;
+          label.textContent = titleText;
+
+          const del = document.createElement("button");
+          del.dataset.action = "delete";
+          del.dataset.sid = s.sessionId;
+          del.title = "Delete";
+          del.textContent = "×";
+          del.style.cssText =
+            "background:transparent;border:0;color:#8b949e;cursor:pointer;padding:2px 4px";
+
+          row.appendChild(label);
+          row.appendChild(del);
+
+          row.addEventListener("click", (ev) => {
+            if (ev.target === del) return;
+            loadSession(s.sessionId);
+          });
+          del.addEventListener("click", async (ev) => {
+            ev.stopPropagation();
+            if (!confirm("Delete this chat? Cannot be undone.")) return;
+            await fetch("/api/sessions/" + encodeURIComponent(s.sessionId), { method: "DELETE" });
+            if (PE_CHAT.sessionId === s.sessionId) startNewSession();
+            refreshSessionList();
+          });
+          el.appendChild(row);
+        }
+      }
+
+      async function loadSession(sessionId) {
+        try {
+          const r = await fetch("/api/sessions/" + encodeURIComponent(sessionId) + "/messages");
+          if (!r.ok) throw new Error("Load " + r.status);
+          const j = await r.json();
+          PE_CHAT.sessionId = sessionId;
+          PE_CHAT.history = (j.messages || [])
+            .filter((m) => m.role === "user" || m.role === "assistant")
+            .map((m) => ({ role: m.role, content: m.content }));
+          // Re-render the chat thread from the loaded history.
+          const thread = document.getElementById("pe-chat-thread");
+          if (thread) thread.innerHTML = "";
+          for (const m of PE_CHAT.history) {
+            if (typeof appendPromptTesterMessage === "function") {
+              appendPromptTesterMessage(m.role, m.content);
+            }
+          }
+          renderPromptTesterMeta();
+          renderSessionList();
+        } catch (err) {
+          console.error("[chat history] load failed:", err);
+        }
+      }
+
+      function startNewSession() {
+        PE_CHAT.sessionId = null;
+        PE_CHAT.history = [];
+        const thread = document.getElementById("pe-chat-thread");
+        if (thread) thread.innerHTML = "";
+        renderPromptTesterMeta();
+        renderSessionList();
+      }
+
+      // Load session list once auth is ready.
+      window.addEventListener("DOMContentLoaded", () => {
+        const tryLoad = () => {
+          if (window.__auth?.ready) refreshSessionList();
+          else setTimeout(tryLoad, 400);
+        };
+        tryLoad();
+      });
+
+      function loadPromptTesterHistory() {
+        // Server is the source of truth (per-user MSSQL). Best-effort wipe any
+        // legacy v1 cache from before SSO so cross-user data doesn't linger.
+        try {
+          localStorage.removeItem(PE_CHAT.storageKey);
+        } catch (_) {}
+        PE_CHAT.history = [];
+      }
       function savePromptTesterHistory() {
-        // Quota fallback: drop oldest turns until it fits or empty.
+        // No-op: history persists via /api/chat → MSSQL. Kept as a stub so the
+        // many existing call sites don't need to change.
+        return;
+        // eslint-disable-next-line no-unreachable
         let attempt = JSON.stringify(PE_CHAT.history);
         while (true) {
           try {
@@ -5856,9 +5937,11 @@
         }
         PE_CHAT.history = [];
         PE_CHAT.pending = [];
+        PE_CHAT.sessionId = null;
         renderPromptTesterPending();
         savePromptTesterHistory();
         renderPromptTesterThread();
+        if (typeof renderSessionList === "function") renderSessionList();
       }
 
       function stopPromptTester() {
@@ -6115,6 +6198,7 @@
             body: JSON.stringify({
               systemPrompt: refined,
               messages: PE_CHAT.history.slice(-12),
+              sessionId: PE_CHAT.sessionId || undefined,
             }),
             signal: PE_CHAT.controller.signal,
           });
@@ -6142,6 +6226,10 @@
               try {
                 const json = JSON.parse(payload);
                 if (json.error) throw new Error(json.error);
+                if (json.sessionId && !PE_CHAT.sessionId) {
+                  PE_CHAT.sessionId = json.sessionId;
+                  if (typeof refreshSessionList === "function") refreshSessionList();
+                }
                 if (json.token) {
                   accumulated += json.token;
                   assistantEl.textContent = accumulated;

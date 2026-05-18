@@ -7660,6 +7660,49 @@ main:focus-visible {
 }
 
 /* 3-Year AI Roadmap. Tabs + month-card grid. */
+.roadmap-cta {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+  background: var(--surface);
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius-lg, 18px);
+  text-align: center;
+}
+.roadmap-reveal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.6rem;
+  font-family: var(--font-editorial, inherit);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--surface);
+  background: var(--coral);
+  border: 1.5px solid var(--coral);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    background 150ms ease;
+}
+.roadmap-reveal-btn:hover,
+.roadmap-reveal-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -10px color-mix(in srgb, var(--coral) 70%, transparent);
+  outline: none;
+}
+.roadmap-cta-hint {
+  margin: 0;
+  max-width: 520px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted, var(--ink));
+}
 .roadmap-bg {
   margin-top: 2rem;
   padding: clamp(1.25rem, 2vw + 1rem, 2.5rem);
