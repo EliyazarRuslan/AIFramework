@@ -49,7 +49,7 @@
     "jose": "^6.2.3",
     "mammoth": "^1.12.0",
     "mssql": "^12.5.4",
-    "pdf-parse": "^1.1.4",
+    "pdf-parse": "^2.4.5",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
