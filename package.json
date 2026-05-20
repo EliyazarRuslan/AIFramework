@@ -42,7 +42,7 @@
     "*.{html,css,js,mjs,ts,tsx,json,md}": "prettier --write"
   },
   "dependencies": {
-    "@azure/msal-browser": "^5.10.1",
+    "@azure/msal-browser": "^5.11.0",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.6.1",
     "express": "^4.22.2",
